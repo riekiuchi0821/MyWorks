@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Webデザイナー木内理恵のポートフォリオサイトです。"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Kiuchi Rie PORTFOLIO</title>
+  </head>
+  <body>
+    <!-- ヘッダー -->
+    <header>
+      <!-- 名前 -->
+      <h3>RIE KIUCHI<br />PORTFOLIO</h3>
+
+      <!-- PC用ナビゲーション -->
+      <nav id="nav-pc">
+        <ul>
+          <li><a href="index.html#works">Works</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- 糸を含めた全体 -->
+    <div class="page-wrapper">
+      <!-- 糸 -->
+      <div class="thread-line"></div>
+
+      <!-- Main Visual -->
+      <main>
+        <article>
+          <section id="main-visual">
+            <img class="ribbon" src="img/ribbon-small.png" alt="リボン" />            
+            <div class="main-message">
+              <h1 class="main-text">想いを整理し<br />伝わるWebサイトに</h1>
+              <h3 class="sub-text">
+                対話を通して、想いや目的を丁寧に整理し、<br />
+                届けたい人へ伝わる形にするお手伝いをします。
+              </h3>
+            </div>
+            <img class="my-photo" src="img/Firefly-hero2expand_2.png" alt="自画像" />
+          </section>
+
+          <section id="works">
+            <h2 class="section-title">Works</h2>
+            <img class="ribbon" src="img/ribbon-small.png" alt="リボン" />
+            <h3 class="works-title">LP</h3>
+            <h3 class="works-title">バナー</h3>
+            <div>
+              <div class="cards">
+                <img
+                  src="img/14771_kiuchirie_01_fireworks.png"
+                  alt="花火大会"
+                />
+                <p><span class="source">自主制作</span>花火大会バナー</p>
+                <p>
+                  <span class="source">ツール</span
+                  ><span class="tool-figma">Figma</span>
+                </p>
+              </div>
+              <div class="cards">
+                <img src="img/14771_kiuchirie_01.png" alt="夏休み家族旅行" />
+                <p>
+                  <span class="source">自主制作</span>夏休み家族旅行特集バナー
+                </p>
+                <p>
+                  <span class="source">ツール</span
+                  ><span class="tool-figma">Figma</span>
+                </p>
+              </div>
+              <div class="cards">
+                <img src="img/14771_kiuchirie_02.png" alt="中古車セール" />
+                <p><span class="source">自主制作</span>中古車セールバナー</p>
+                <p>
+                  <span class="source">ツール</span
+                  ><span class="tool-figma">Figma</span>
+                </p>
+              </div>
+              <div class="cards">
+                <img
+                  src="img/BW_banner_yellow_r2.png"
+                  alt="GW親子特別イベント"
+                />
+                <p><span class="source">案件</span>GW親子特別イベントバナー</p>
+                <p>
+                  <span class="source">ツール</span
+                  ><span class="tool-photoshop">Photoshop</span>
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section id="about">
+            <h2 class="section-title">About</h2>
+            <img class="ribbon" src="img/ribbon-small.png" alt="リボン" />
+            <div>
+              <div class="about-img">
+                <img
+                  class="about-photo"
+                  src="img/myphoto.png"
+                  alt="自分の写真"
+                />
+              </div>
+              <div class="about-text">
+                <h2>RIE KIUCHI</h2>
+                <h3>木内 理恵</h3>
+                <p>
+                  精密機器メーカーで15年間、ソフトウェア要件定義・プロジェクトマネジメントを担当。<br />
+                  異なる立場にいる関係者の想いを整理し、共通認識をつくりながらプロジェクトを進めてきました。<br />
+                  <br />
+                  「想いはあるけれど、うまく言葉にできない」<br />
+                  そんな想いを一緒に整理し、届けたい相手に伝わる形にすることを大切にしています。<br />
+                  <br />
+                  東京都在住、2児の母。<br />
+                  地元で、観光ボランティアガイドをしています。<br />
+                </p>
+                <h4>Skills</h4>
+                <p>
+                  <span class="skill-title">Webデザイン</span>Photoshop / Figma
+                </p>
+                <p>
+                  <span class="skill-title">コーディング</span>HTML / CSS /
+                  JavaScript / STUDIO / WordPress
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section id="contact">
+            <h2 class="section-title">Contact</h2>
+            <p>制作のご依頼・ご相談など、お気軽にお問合せください。</p>
+            <form class="contact-form">
+              <div class="contact-table">
+                <div class="form-row first-row">
+                  <div class="table-title">
+                    <label for="yourname">お名前</label>
+                  </div>
+                  <div class="table-input">
+                    <input type="text" name="yourname" id="yourname" />
+                    <p class="error-message"></p>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="table-title">
+                    <label for="email">メールアドレス</label>
+                  </div>
+                  <div class="table-input">
+                    <input type="email" name="email" id="email"/>
+                    <p class="error-message"></p>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="table-title">お問合せ内容</div>
+                  <div class="table-input">
+                    <textarea name="message" id="message"></textarea>
+                    <p class="error-message"></p>
+                  </div>
+                </div>
+              </div>
+              <input type="submit" value="送信する" id="send-button" />
+            </form>
+          </section>
+        </article>
+      </main>
+    </div>
+    <script src="js/top.js"></script>
+  </body>
+</html>

@@ -1,0 +1,250 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin:0 auto;
+    font-family: "Hiragino Mincho ProN", "Shippori Mincho Regular", serif;
+    background-color: #FFFDF2;
+}
+
+header {
+    max-width: 1080px;
+    margin:50px auto 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section-title {
+    font-size: 48px;
+    text-align: left;
+    margin: 100px 0 20px 0;
+    padding: 0 0 10px 20px;
+    border-bottom: solid 3px #C73A32;    
+}
+
+.ribbon {
+    position: absolute;
+    left: -80px;
+    top: -20px;    
+    width: 80px;
+    height: 50px;
+    z-index: 5;      
+}
+
+
+/* 糸含む全体 */
+.page-wrapper {
+    position: relative;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 0 0 80px;
+}
+
+/* 糸（仮で細長いdivを設置） */
+.thread-line {
+    position: absolute;
+    top: 0;
+    left: 40px;
+    width: 2px;
+    height: 5000px;
+    background-color: #C73A32;
+    z-index: 5;   
+}
+
+/* ナビゲーション */
+header > h3 {
+    padding: 0 0 0 20px;
+}
+
+#nav-pc {
+    font-size: 14px;
+    padding: 0 20px 0 0;
+}
+
+#nav-pc ul {
+    display: flex;
+    padding-left: 0;
+    column-gap: 30px;
+}
+
+#nav-pc li {
+    list-style: none;
+}
+
+#nav-pc a {
+    text-decoration: none;
+    color: #0d0d0d;
+}
+
+#nav-pc a:hover {
+    text-decoration: underline;
+}
+
+
+/* Main Visual */
+#main-visual {
+    margin: 20px 0 0 0;
+    position: relative;
+    height: 80vh;
+}
+
+.main-message {
+    width: 60%;
+}
+
+.main-text {
+    position: relative; 
+    font-size: 48px;
+    z-index: 12;
+    margin: 0;
+    padding: 100px 0 0 0;
+
+    font-weight: 300;
+}
+
+.sub-text{
+    position: relative;    
+    max-width: 500px; 
+    padding: 24px 0 200px 5px;
+    z-index: 11;   
+    font-weight: 300;
+}
+
+.my-photo {
+    position: absolute;
+    left: -80px;
+    top: 0;
+    width: calc(100% + 80px); /* 使い方追っておく*/
+    height: 100%;
+    object-fit: cover; /* 使い方追っておく*/
+    object-position: right center; /* 使い方追っておく*/
+    z-index: 1;
+}
+
+/* Works */
+.works-title{
+    font-size: 24px;
+}
+
+#works {
+    position: relative;
+}
+
+#works > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px 50px;
+}
+
+.cards{
+    width: 450px;
+}
+
+.cards > img {
+    width: 90%;
+}
+
+.source {
+    display: inline-block;
+    width: 80px;
+}
+
+.tool-figma {
+    background-color: #B0D4E2;
+    text-align: center;
+    border-radius: 12px;
+    padding: 2px 16px;    
+}
+
+.tool-photoshop {
+    background-color: #FCC0EA;
+    text-align: center;
+    border-radius: 12px;
+    padding: 2px 16px;
+}
+
+/* About */
+
+#about {
+    position: relative;
+}
+
+#about > div {
+    display: flex;
+    gap: 0 5%;
+    margin: 100px 0 0 0;
+    padding: 0 20px 0 20px;
+}
+
+.about-img {
+    width: 40%;
+}
+
+.about-photo {
+    width: 100%;
+    border-radius: 5%;
+}
+
+.about-text {
+    width: 60%;
+}
+
+.skill-title {
+    display: inline-block;
+    width: 120px;
+}
+
+/* Contact */
+.contact-table {
+    width: 70%;
+    max-width: 780px;
+    margin: 40px auto 0;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 230px 1fr;
+}
+
+
+.table-title {
+    border-left: 1px solid #D9D9D9;
+    border-right: 1px solid #D9D9D9;
+    border-bottom: 1px solid #D9D9D9;
+    padding: 10px 0 10px 20px;
+    background-color: #FFF6C2;
+}
+
+.table-input {
+    border-bottom: 1px solid #D9D9D9;
+    border-right: 1px solid #D9D9D9;
+    padding: 10px 0 10px 20px;
+}
+
+.first-row {
+    border-top: 1px solid #D9D9D9;
+}
+
+#yourname, #email {
+    width: 70%;
+}
+
+#message {
+    width: 90%;
+    height: 300px;
+}
+
+#send-button {
+    display: block; /* 中央揃えするためにはdivにする必要がある */
+    margin: 20px auto 0;
+    background-color: #FFDFC8;
+    border: none;
+    padding: 5px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 20px;
+}
