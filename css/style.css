@@ -254,6 +254,10 @@ header > h3 {
     font-family: inherit; /* 親を継承 */
 }
 
+#send-button:hover {
+    opacity: 0.8;
+}
+
 .error-message {
     color: var(--ribbon-color);
 }

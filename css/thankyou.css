@@ -25,5 +25,14 @@ body {
     border: none;
     padding: 5px 30px;
     border-radius: 30px;
-    font-family: inherit; /* 親を継承 */
+    font-family: inherit;
+    text-decoration: none;
+}
+
+#home-button:visited {
+    color: inherit;
+}
+
+#home-button:hover {
+    opacity: 0.8;
 }
