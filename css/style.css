@@ -32,7 +32,7 @@ header {
 .ribbon {
     position: absolute;
     left: -80px;
-    top: -20px;    
+    top: -50px;    
     width: 80px;
     height: 50px;
     z-index: 5;      
@@ -47,13 +47,23 @@ header {
     padding: 0 0 0 80px;
 }
 
-/* 糸（仮で細長いdivを設置） */
+/* 糸 */
 .thread-line {
     position: absolute;
-    top: 80px;
-    left: 40px;
+    top: -20px;
+    left: -40px;
     width: 2px;
-    height: 3600px;
+    height: calc(100% + 90px);
+    background-color: var(--ribbon-color);
+    z-index: 5;   
+}
+
+.thread-line-top {
+    position: absolute;
+    top: 80px;
+    left: -40px;
+    width: 2px;
+    height: 100%;
     background-color: var(--ribbon-color);
     z-index: 5;   
 }
@@ -183,7 +193,7 @@ header > h3 {
     position: relative;
 }
 
-#about > div {
+.about-container {
     display: flex;
     gap: 0 5%;
     margin: 100px 0 0 0;
@@ -201,6 +211,10 @@ header > h3 {
 
 .about-text {
     width: 60%;
+}
+
+.about-text > h2 {
+    margin: 0;
 }
 
 .skill-title {
