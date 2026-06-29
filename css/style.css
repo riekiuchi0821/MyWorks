@@ -14,7 +14,7 @@ body {
 }
 
 header {
-    max-width: 1080px;
+    /* max-width: 1080px; */
     margin:50px auto 0 auto;
     display: flex;
     justify-content: space-between;
@@ -50,28 +50,29 @@ header {
 /* 糸（仮で細長いdivを設置） */
 .thread-line {
     position: absolute;
-    top: 0;
+    top: 80px;
     left: 40px;
     width: 2px;
-    height: 5000px;
+    height: 3600px;
     background-color: var(--ribbon-color);
     z-index: 5;   
 }
 
 /* ナビゲーション */
 header > h3 {
-    padding: 0 0 0 20px;
+    padding: 0 0 0 100px;
+    font-size: 24px;
 }
 
 #nav-pc {
-    font-size: 14px;
-    padding: 0 20px 0 0;
+    font-size: 20px;
+    padding: 0 100px 0 0;
 }
 
 #nav-pc ul {
     display: flex;
     padding-left: 0;
-    column-gap: 30px;
+    column-gap: 60px;
 }
 
 #nav-pc li {
@@ -101,27 +102,32 @@ header > h3 {
 
 .main-text {
     position: relative; 
-    font-size: 48px;
+    font-size: 50px;
     z-index: 12;
     margin: 0;
-    padding: 100px 0 0 0;
-
+    padding: 130px 0 0 0;
     font-weight: 300;
+}
+
+.main-text > span {
+    color: var(--ribbon-color);
 }
 
 .sub-text{
     position: relative;    
     max-width: 500px; 
     padding: 24px 0 200px 5px;
-    z-index: 11;   
+    z-index: 11;
+    font-size: 20px;   
     font-weight: 300;
+    line-height: 1.8;
 }
 
 .my-photo {
     position: absolute;
-    left: -80px;
+    left: -160px;
     top: 0;
-    width: calc(100% + 80px); /* 使い方追っておく*/
+    width: calc(100% + 320px);
     height: 100%;
     object-fit: cover; /* 使い方追っておく*/
     object-position: right center; /* 使い方追っておく*/
@@ -203,6 +209,10 @@ header > h3 {
 }
 
 /* Contact */
+#contact {
+    position: relative;
+}
+
 .contact-table {
     width: 70%;
     max-width: 780px;
