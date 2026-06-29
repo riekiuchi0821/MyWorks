@@ -17,7 +17,7 @@ function validation(event) {
   //初期化
   const errorMessages = document.querySelectorAll(".error-message");
   errorMessages.forEach(function(message){
-    message.textContent = "";
+    message.textContent = ""; //再入力で問題なくなったときのエラーを消すため
   });
 
   //名前チェック

@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin:0 auto;
+    font-family: "Hiragino Mincho ProN", "Shippori Mincho Regular", serif;
+    background-color: #FFFDF2;
+}
+
+#thankyou {
+    width: 50%;
+    margin: 200px auto 0 auto;
+    text-align: center;
+}
+
+.contents {
+    margin: 10px 0 50px 0;
+}
+
+#home-button {
+    font-size: 20px;
+    background-color: #FFDFC8;
+    border: none;
+    padding: 5px 30px;
+    border-radius: 30px;
+    font-family: inherit; /* 親を継承 */
+}
