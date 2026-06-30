@@ -14,7 +14,7 @@ body {
 }
 
 header {
-    /* max-width: 1080px; */
+    max-width: 1600px;
     margin:50px auto 0 auto;
     display: flex;
     justify-content: space-between;
@@ -32,7 +32,7 @@ header {
 .ribbon {
     position: absolute;
     left: -80px;
-    top: -50px;    
+    top: -20px;    
     width: 80px;
     height: 50px;
     z-index: 5;      
@@ -50,10 +50,10 @@ header {
 /* 糸 */
 .thread-line {
     position: absolute;
-    top: -20px;
+    top: 0px;
     left: -40px;
     width: 2px;
-    height: calc(100% + 90px);
+    height: calc(100% + 100px);
     background-color: var(--ribbon-color);
     z-index: 5;   
 }
@@ -63,7 +63,7 @@ header {
     top: 80px;
     left: -40px;
     width: 2px;
-    height: 100%;
+    height: calc(100% + 20px);
     background-color: var(--ribbon-color);
     z-index: 5;   
 }
@@ -124,9 +124,8 @@ header > h3 {
 }
 
 .sub-text{
-    position: relative;    
-    max-width: 500px; 
-    padding: 24px 0 200px 5px;
+    position: relative;
+    padding: 24px 0 0 5px;
     z-index: 11;
     font-size: 20px;   
     font-weight: 300;
