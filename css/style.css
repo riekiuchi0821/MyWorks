@@ -1,5 +1,6 @@
 :root {
   --ribbon-color: #FD2621;
+  --thread-space: 100px; /* 糸のレーンを左に100px確保している */
 }
 
 * {
@@ -14,7 +15,7 @@ body {
 }
 
 header {
-    max-width: 1600px;
+    max-width: 1700px;
     margin:50px auto 0 auto;
     display: flex;
     justify-content: space-between;
@@ -24,14 +25,14 @@ header {
 .section-title {
     font-size: 48px;
     text-align: left;
-    margin: 100px 0 20px 0;
+    margin: 100px 0 20px var(--thread-space);
     padding: 0 0 10px 20px;
     border-bottom: solid 3px var(--ribbon-color);    
 }
 
 .ribbon {
     position: absolute;
-    left: -80px;
+    left: 0px;
     top: -20px;    
     width: 80px;
     height: 50px;
@@ -44,14 +45,12 @@ header {
     position: relative;
     max-width: 1080px;
     margin: 0 auto;
-    padding: 0 0 0 80px;
 }
 
 /* 糸 */
 .thread-line {
     position: absolute;
-    top: 0px;
-    left: -40px;
+    left: 40px;
     width: 2px;
     height: calc(100% + 100px);
     background-color: var(--ribbon-color);
@@ -61,7 +60,7 @@ header {
 .thread-line-top {
     position: absolute;
     top: 80px;
-    left: -40px;
+    left: 40px;
     width: 2px;
     height: calc(100% + 20px);
     background-color: var(--ribbon-color);
@@ -108,6 +107,7 @@ header > h3 {
 
 .main-message {
     width: 60%;
+    padding: 0 0 0 var(--thread-space);
 }
 
 .main-text {
@@ -133,30 +133,33 @@ header > h3 {
 }
 
 .my-photo {
+    /* ヒーローエリアの画像は、pagewrapper=1080pxより左右200pxずつ大きめに表示する */
     position: absolute;
-    left: -160px;
+    left: -200px;
     top: 0;
-    width: calc(100% + 320px);
+    width: calc(100% + 400px);
     height: 100%;
-    object-fit: cover; /* 使い方追っておく*/
-    object-position: right center; /* 使い方追っておく*/
+    object-fit: cover;
+    object-position: right center;
     z-index: 1;
 }
 
 /* Works */
-.works-title{
-    font-size: 24px;
-}
-
 #works {
     position: relative;
 }
 
-#works > div {
+.works-title{
+    font-size: 24px;
+    text-align: center;
+}
+
+#card-area {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 50px 50px;
+    margin-left: var(--thread-space);
 }
 
 .cards{
@@ -195,7 +198,7 @@ header > h3 {
 .about-container {
     display: flex;
     gap: 0 5%;
-    margin: 100px 0 0 0;
+    margin: 100px 0 0 var(--thread-space);
     padding: 0 20px 0 20px;
 }
 
@@ -224,6 +227,10 @@ header > h3 {
 /* Contact */
 #contact {
     position: relative;
+}
+
+#contact > p {
+    margin-left: var(--thread-space);
 }
 
 .contact-table {
