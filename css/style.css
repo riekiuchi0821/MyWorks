@@ -1,6 +1,8 @@
 :root {
   --ribbon-color: #FD2621;
-  --thread-space: 100px; /* 糸のレーンを左に100px確保している */
+  --button-color: #FFC3C4;
+  --thread-space: 100px; /* 糸のレーンを左に100px確保している */  
+  --thread-left: 40px; /* 糸が引かれている左からの位置*/
 }
 
 * {
@@ -16,7 +18,7 @@ body {
 
 header {
     max-width: 1700px;
-    margin:50px auto 0 auto;
+    margin: 50px auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,13 +32,17 @@ header {
     border-bottom: solid 3px var(--ribbon-color);    
 }
 
-.ribbon {
+.ribbon-pc {
     position: absolute;
     left: 0px;
     top: -20px;    
     width: 80px;
     height: 50px;
     z-index: 5;      
+}
+
+.ribbon-sp {
+    display: none;
 }
 
 
@@ -50,7 +56,7 @@ header {
 /* 糸 */
 .thread-line {
     position: absolute;
-    left: 40px;
+    left: var(--thread-left);
     width: 2px;
     height: calc(100% + 100px);
     background-color: var(--ribbon-color);
@@ -60,7 +66,7 @@ header {
 .thread-line-top {
     position: absolute;
     top: 80px;
-    left: 40px;
+    left: var(--thread-left);
     width: 2px;
     height: calc(100% + 20px);
     background-color: var(--ribbon-color);
@@ -68,14 +74,19 @@ header {
 }
 
 /* ナビゲーション */
+#hamburger-button {
+    display: none;
+}
+
 header > h3 {
-    padding: 0 0 0 100px;
+    padding-left: 100px;
     font-size: 24px;
+    margin: 0;
 }
 
 #nav-pc {
+    padding-right: 100px;
     font-size: 20px;
-    padding: 0 100px 0 0;
 }
 
 #nav-pc ul {
@@ -100,9 +111,9 @@ header > h3 {
 
 /* Main Visual */
 #main-visual {
-    margin: 20px 0 0 0;
     position: relative;
-    height: 80vh;
+    /* height: 80vh; */
+    height: clamp(600px, 80vh, 750px);
 }
 
 .main-message {
@@ -112,7 +123,7 @@ header > h3 {
 
 .main-text {
     position: relative; 
-    font-size: 50px;
+    font-size: 48px;
     z-index: 12;
     margin: 0;
     padding: 130px 0 0 0;
@@ -127,7 +138,7 @@ header > h3 {
     position: relative;
     padding: 24px 0 0 5px;
     z-index: 11;
-    font-size: 20px;   
+    font-size: 24px;   
     font-weight: 300;
     line-height: 1.8;
 }
@@ -136,7 +147,6 @@ header > h3 {
     /* ヒーローエリアの画像は、pagewrapper=1080pxより左右200pxずつ大きめに表示する */
     position: absolute;
     left: -200px;
-    top: 0;
     width: calc(100% + 400px);
     height: 100%;
     object-fit: cover;
@@ -152,6 +162,7 @@ header > h3 {
 .works-title{
     font-size: 24px;
     text-align: center;
+    margin-left: var(--thread-space);    
 }
 
 #card-area {
@@ -199,7 +210,7 @@ header > h3 {
     display: flex;
     gap: 0 5%;
     margin: 100px 0 0 var(--thread-space);
-    padding: 0 20px 0 20px;
+    padding: 0 20px;
 }
 
 .about-img {
@@ -219,9 +230,10 @@ header > h3 {
     margin: 0;
 }
 
-.skill-title {
-    display: inline-block;
-    width: 120px;
+#skill-grid {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    row-gap: 10px;
 }
 
 /* Contact */
@@ -234,53 +246,45 @@ header > h3 {
 }
 
 .contact-table {
-    width: 70%;
-    max-width: 780px;
+    width: 60%;
+    max-width: 600px;
     margin: 40px auto 0;
 }
 
 .form-row {
     display: grid;
-    grid-template-columns: 230px 1fr;
+    grid-template-columns: 150px 1fr;
 }
 
 
 .table-title {
-    border-left: 1px solid #D9D9D9;
-    border-right: 1px solid #D9D9D9;
-    border-bottom: 1px solid #D9D9D9;
-    padding: 10px 0 10px 20px;
-    background-color: #FFF6C2;
+    padding: 20px 0 10px 0;    
 }
 
 .table-input {
-    border-bottom: 1px solid #D9D9D9;
-    border-right: 1px solid #D9D9D9;
+
     padding: 10px 0 10px 20px;
 }
 
-.first-row {
-    border-top: 1px solid #D9D9D9;
-}
-
 #yourname, #email {
-    width: 70%;
+    width: 100%;
+    height: 48px;
 }
 
 #message {
-    width: 90%;
-    height: 300px;
+    width: 100%;
+    height: 220px;
 }
 
 #send-button {
     display: block; /* 中央揃えするためにはdivにする必要がある */
-    margin: 20px auto 0;
-    background-color: #FFDFC8;
+    margin: 16px auto 0;
+    background-color: var(--button-color);
     border: none;
     padding: 5px 30px;
     border-radius: 30px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 16px;
     font-family: inherit; /* 親を継承 */
 }
 
@@ -290,4 +294,142 @@ header > h3 {
 
 .error-message {
     color: var(--ribbon-color);
+}
+
+@media (max-width: 767px) {
+
+    /* ヘッダ */
+    header {
+        margin: 20px auto;
+    }
+
+    #nav-pc {
+        display: none;
+    }
+
+    #hamburger-button {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 10px;
+        color: var(--ribbon-color);
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    #hamburger-button span {
+        width: 30px;
+        height: 2px;
+        background-color: var(--ribbon-color);
+    }
+
+    header > h3 {
+        padding-left: 20px;
+        font-size: 20px;
+    }
+
+    /* 各セクションのタイトル */
+    .section-title-wrapper {
+        position: relative;
+    }
+
+    .section-title {
+        font-size: 24px; 
+        margin: 50px 20px 20px var(--thread-left); /*糸の位置から線を引く*/
+        padding-bottom: 5px;
+        border-bottom: solid 1px var(--ribbon-color);    
+    }
+
+    .ribbon-sp {
+        display: block;
+        position: absolute;
+        left: 20px;
+        top: 30px;    
+        width: 40px;
+        height: 25px;
+        z-index: 5;      
+    }
+
+
+
+    /* Main Visual */    
+    .main-message {
+        width: 100%;
+        padding-left: 60px;
+    }
+
+    .main-text {
+        font-size: 32px;
+    }
+
+    .sub-text {
+        font-size: 14px;
+    }
+
+    .my-photo {
+        left: 0;
+        width: 100%;
+    }
+
+    /* 糸 */
+    .thread-line {
+        display: none;
+    }
+
+    .thread-line-top {
+        height: 350px;
+        width: 1px;
+    }
+
+    /* SP側のリボンは、Section titleを親とする*/
+    .ribbon-pc {
+        display: none;      
+    }
+    
+
+    /* Works */
+    .works-title {
+        font-size: 16px;
+        margin-left: 0;
+    }
+
+    #card-area {
+        margin-left: 0;
+    }
+
+    .cards{
+        width: 80%;
+    }
+
+    .cards > img {
+        width: 100%;
+    }
+
+    /* About */
+    .about-container {
+        display: block;
+        margin: 0;
+        padding: 0 40px;
+        font-size: 14px;
+    }
+
+    .about-img {
+        width: 80%;
+        margin: 30px auto 0;
+    }
+
+    .about-text {
+        width: 100%;
+    }
+
+    .about-text > h2 {
+        margin: 0;
+    }
+
+    .skill-title {
+        display: inline-block;
+        width: 120px;
+    }
+
 }

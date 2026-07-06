@@ -1,3 +1,7 @@
+:root {
+  --button-color: #FFC3C4;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -21,7 +25,7 @@ body {
 
 #home-button {
     font-size: 20px;
-    background-color: #FFDFC8;
+    background-color: var(--button-color);
     border: none;
     padding: 5px 30px;
     border-radius: 30px;

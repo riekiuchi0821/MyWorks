@@ -14,7 +14,10 @@
     <!-- ヘッダー -->
     <header>
       <!-- 名前 -->
-      <h3>RIE KIUCHI <br> PORTFOLIO</h3>
+      <h3>
+        RIE KIUCHI <br />
+        PORTFOLIO
+      </h3>
 
       <!-- PC用ナビゲーション -->
       <nav id="nav-pc">
@@ -24,33 +27,50 @@
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </nav>
+      <button id="hamburger-button" type="button">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </header>
 
     <!-- 糸を含めた全体 糸の位置を決めるために、基準を決める -->
     <div class="page-wrapper">
-
       <!-- Main Visual -->
       <main>
         <article>
-
           <section id="main-visual">
-            <img class="my-photo" src="img/Firefly-hero2expand_2.png" alt="自画像" />       
-            <!-- <img class="ribbon" src="img/ribbon-small.png" alt="リボン" />             -->
+            <picture>
+              <!-- 500px以下：スマホ用 -->
+              <source media="(max-width: 500px)" srcset="img/hero-sp.png" />
+              <!-- 767px以下：タブレット用 -->
+              <source media="(max-width: 767px)" srcset="img/hero-tablet.png" />
+              <!-- 768px以上：PC用 -->
+              <img
+                class="my-photo"
+                src="img/Firefly-hero2expand_2.png"
+                alt="自画像"
+              />
+            </picture>
             <div class="thread-line-top"></div>
             <div class="main-message">
-              <h1 class="main-text"><span>想い</span>を整理し<br />伝わるWebサイトに</h1>
+              <h1 class="main-text">
+                <span>想い</span>を整理し<br />伝わるWebサイトに
+              </h1>
               <h3 class="sub-text">
                 対話を通して、想いや目的を丁寧に整理し、<br />
                 届けたい人へ伝わる形にするお手伝いをします。
               </h3>
             </div>
-
           </section>
 
           <section id="works">
             <div class="thread-line"></div>
-            <h2 class="section-title">Works</h2>
-            <img class="ribbon" src="img/ribbon2.png" alt="リボン" />
+            <div class="section-title-wrapper">
+              <h2 class="section-title">Works</h2>
+              <img class="ribbon-sp" src="img/ribbon2.png" alt="リボン" />
+            </div>
+            <img class="ribbon-pc" src="img/ribbon2.png" alt="リボン" />
             <h3 class="works-title">LP</h3>
             <h3 class="works-title">バナー</h3>
             <div id="card-area">
@@ -59,7 +79,8 @@
                   src="img/14771_kiuchirie_01_fireworks.png"
                   alt="花火大会"
                 />
-                <p><span class="source">自主制作</span>花火大会バナー</p>
+                <!-- <p><span class="source">自主制作</span>花火大会バナー</p> -->
+                <p>花火大会</p>
                 <p>
                   <span class="source">ツール</span
                   ><span class="tool-figma">Figma</span>
@@ -67,9 +88,8 @@
               </div>
               <div class="cards">
                 <img src="img/14771_kiuchirie_01.png" alt="夏休み家族旅行" />
-                <p>
-                  <span class="source">自主制作</span>夏休み家族旅行特集バナー
-                </p>
+                <!-- <p><span class="source">自主制作</span>夏休み家族旅行特集バナー</p> -->
+                <p>夏休み家族旅行特集</p>
                 <p>
                   <span class="source">ツール</span
                   ><span class="tool-figma">Figma</span>
@@ -77,7 +97,8 @@
               </div>
               <div class="cards">
                 <img src="img/14771_kiuchirie_02.png" alt="中古車セール" />
-                <p><span class="source">自主制作</span>中古車セールバナー</p>
+                <!-- <p><span class="source">自主制作</span>中古車セールバナー</p> -->
+                <p>中古車セール</p>
                 <p>
                   <span class="source">ツール</span
                   ><span class="tool-figma">Figma</span>
@@ -88,7 +109,8 @@
                   src="img/BW_banner_yellow_r2.png"
                   alt="GW親子特別イベント"
                 />
-                <p><span class="source">案件</span>GW親子特別イベントバナー</p>
+                <!-- <p><span class="source">案件</span>GW親子特別イベントバナー</p> -->
+                <p>GW親子特別イベント</p>
                 <p>
                   <span class="source">ツール</span
                   ><span class="tool-photoshop">Photoshop</span>
@@ -98,9 +120,12 @@
           </section>
 
           <section id="about">
-            <div class="thread-line"></div>            
-            <h2 class="section-title">About</h2>
-            <img class="ribbon" src="img/ribbon2.png" alt="リボン" />
+            <div class="thread-line"></div>
+            <div class="section-title-wrapper">
+              <h2 class="section-title">About</h2>
+              <img class="ribbon-sp" src="img/ribbon2.png" alt="リボン" />
+            </div>
+            <img class="ribbon-pc" src="img/ribbon2.png" alt="リボン" />
             <div class="about-container">
               <div class="about-img">
                 <img
@@ -123,21 +148,32 @@
                   地元で、観光ボランティアガイドをしています。<br />
                 </p>
                 <h4>Skills</h4>
-                <p>
+                <div id="skill-grid">
+                  <div>Webデザイン</div>
+                  <div>Photoshop / Figma</div>
+
+                  <div>コーディング</div>
+                  <div>HTML / CSS / JavaScript / STUDIO / WordPress</div>
+                </div>
+
+                <!-- <p>
                   <span class="skill-title">Webデザイン</span>Photoshop / Figma
                 </p>
                 <p>
                   <span class="skill-title">コーディング</span>HTML / CSS /
                   JavaScript / STUDIO / WordPress
-                </p>
+                </p> -->
               </div>
             </div>
           </section>
 
           <section id="contact">
-            <div class="thread-line"></div>            
-            <h2 class="section-title">Contact</h2>
-            <img class="ribbon" src="img/ribbon2.png" alt="リボン" />            
+            <div class="thread-line"></div>
+            <div class="section-title-wrapper">
+              <h2 class="section-title">Contact</h2>
+              <img class="ribbon-sp" src="img/ribbon2.png" alt="リボン" />
+            </div>
+            <img class="ribbon-pc" src="img/ribbon2.png" alt="リボン" />
             <p>制作のご依頼・ご相談など、お気軽にお問合せください。</p>
             <form class="contact-form">
               <div class="contact-table">
@@ -155,13 +191,13 @@
                     <label for="email">メールアドレス</label>
                   </div>
                   <div class="table-input">
-                    <input type="email" name="email" id="email"/>
+                    <input type="email" name="email" id="email" />
                     <p class="error-message"></p>
                   </div>
                 </div>
                 <div class="form-row">
                   <div class="table-title">
-                    <label for="message">お問合せ内容</label>                    
+                    <label for="message">お問合せ内容</label>
                   </div>
                   <div class="table-input">
                     <textarea name="message" id="message"></textarea>
@@ -175,6 +211,11 @@
         </article>
       </main>
     </div>
+
+    <footer>
+      <p>&copy; 2026 RIE KIUCHI</p>
+    </footer>
+
     <script src="js/top.js"></script>
   </body>
 </html>
