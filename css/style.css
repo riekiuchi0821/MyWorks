@@ -9,6 +9,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 
 body {
     margin:0 auto;
@@ -134,7 +138,8 @@ header > h3 {
 }
 
 #nav-pc a:hover {
-    text-decoration: underline;
+    /* text-decoration: underline; */
+    opacity: 50%;
 }
 
 
@@ -324,10 +329,29 @@ header > h3 {
 }
 
 /* Footer */
-footer p {
+#copyright {
     text-align: center;
-    margin: 100px 0 50px 0;
+    margin: 0 0 50px 0;
 }
+
+.pagetop {
+    display: flex;
+    align-items: center;
+    height: 80px;
+    width: 110px;
+    margin: 100px auto 50px auto;
+    text-decoration: none;
+    color: #0d0d0d;
+}
+
+.arrow {
+    height: 100%;
+}
+
+.pagetop:hover {
+    opacity: 50%;
+}
+
 
 @media (max-width: 767px) {
 
@@ -424,11 +448,11 @@ footer p {
     /* Works */
     .works-title {
         font-size: 16px;
-        margin-left: 0;
+        padding-left: 0;
     }
 
     #card-area {
-        margin-left: 0;
+        padding-left:0;
     }
 
     .cards{
@@ -470,6 +494,10 @@ footer p {
     #contact p{
         margin-left: var(--thread-left);
         padding-right: 40px;
+    }
+
+    .contact-table {
+        width: 80%;
     }
 
 }
