@@ -38,7 +38,13 @@ header {
     top: -20px;    
     width: 80px;
     height: 50px;
-    z-index: 5;      
+    z-index: 5;
+    opacity: 0;
+    transition: opacity 1s ease;     
+}
+
+.ribbon-pc.scroll {
+    opacity: 1;
 }
 
 .ribbon-sp {
@@ -54,23 +60,46 @@ header {
 }
 
 /* 糸 */
-.thread-line {
-    position: absolute;
-    left: var(--thread-left);
-    width: 2px;
-    height: calc(100% + 100px);
-    background-color: var(--ribbon-color);
-    z-index: 5;   
-}
 
-.thread-line-top {
+/* メインセクションの糸 */
+#thread-line-top {
     position: absolute;
     top: 80px;
     left: var(--thread-left);
-    width: 2px;
+    width: 1px;
     height: calc(100% + 20px);
     background-color: var(--ribbon-color);
-    z-index: 5;   
+    z-index: 5;
+    /* 糸の動き */
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 1.5s ease 0.5s;
+}
+
+#thread-line-top.scroll {
+    transform: scaleY(1);
+}
+
+/* 他セクションの糸 */
+.thread-line {
+    position: absolute;
+    left: var(--thread-left);
+    width: 1px;
+    height: calc(100% + 100px);
+    background-color: var(--ribbon-color);
+    z-index: 5;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 2.5s ease 0.5s;
+}
+
+.thread-line.scroll {
+    transform: scaleY(1);
+}
+
+/* 最後のセクションのみ糸を短く */
+#contact .thread-line {
+    height: 100%;
 }
 
 /* ナビゲーション */
@@ -162,7 +191,7 @@ header > h3 {
 .works-title{
     font-size: 24px;
     text-align: center;
-    margin-left: var(--thread-space);    
+    padding-left: var(--thread-space);    
 }
 
 #card-area {
@@ -170,7 +199,7 @@ header > h3 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 50px 50px;
-    margin-left: var(--thread-space);
+    padding-left: var(--thread-space);
 }
 
 .cards{
@@ -252,18 +281,16 @@ header > h3 {
 }
 
 .form-row {
-    display: grid;
-    grid-template-columns: 150px 1fr;
+    display: flex;
+    flex-direction: column;
 }
-
 
 .table-title {
     padding: 20px 0 10px 0;    
 }
 
 .table-input {
-
-    padding: 10px 0 10px 20px;
+    padding: 10px 0;
 }
 
 #yourname, #email {
@@ -294,6 +321,12 @@ header > h3 {
 
 .error-message {
     color: var(--ribbon-color);
+}
+
+/* Footer */
+footer p {
+    text-align: center;
+    margin: 100px 0 50px 0;
 }
 
 @media (max-width: 767px) {
@@ -377,7 +410,7 @@ header > h3 {
         display: none;
     }
 
-    .thread-line-top {
+    #thread-line-top {
         height: 350px;
         width: 1px;
     }
@@ -430,6 +463,13 @@ header > h3 {
     .skill-title {
         display: inline-block;
         width: 120px;
+    }
+
+    
+    /* Contact */
+    #contact p{
+        margin-left: var(--thread-left);
+        padding-right: 40px;
     }
 
 }
