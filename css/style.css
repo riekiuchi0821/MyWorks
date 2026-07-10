@@ -363,12 +363,11 @@ header > h3 {
     }
 
     #navigation {
-        display: fixed;
+        position: fixed;
     }
 
     #navigation.is-opened {
         display: block;
-        position: fixed;
         width: 100vw;
         height: 100vh;
         top: 0px;
@@ -377,7 +376,6 @@ header > h3 {
     }
 
     #navigation ul {
-        position: fixed;
         flex-direction: column;
         align-items: center;
         gap: 50px;
@@ -387,6 +385,12 @@ header > h3 {
         padding-top: 100px;
         border-radius: 0 10px 10px 0;
         background-color: var(--body-color);
+        transform: translateX(-80vw);
+        transition: 0.5s;
+    }
+
+    #navigation.is-opened ul {
+        transform: translateX(0);
     }
 
     #hamburger-button {
