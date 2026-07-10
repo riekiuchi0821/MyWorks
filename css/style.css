@@ -1,4 +1,5 @@
 :root {
+  --body-color: #FFFDF2;
   --ribbon-color: #FD2621;
   --button-color: #FFC3C4;
   --thread-space: 100px; /* 糸のレーンを左に100px確保している */  
@@ -17,7 +18,7 @@ html {
 body {
     margin:0 auto;
     font-family: "Hiragino Mincho ProN", "Shippori Mincho Regular", serif;
-    background-color: #FFFDF2;
+    background-color: var(--body-color);
 }
 
 header {
@@ -117,27 +118,27 @@ header > h3 {
     margin: 0;
 }
 
-#nav-pc {
+#navigation {
     padding-right: 100px;
     font-size: 20px;
 }
 
-#nav-pc ul {
+#navigation ul {
     display: flex;
     padding-left: 0;
     column-gap: 60px;
 }
 
-#nav-pc li {
+#navigation li {
     list-style: none;
 }
 
-#nav-pc a {
+#navigation a {
     text-decoration: none;
     color: #0d0d0d;
 }
 
-#nav-pc a:hover {
+#navigation a:hover {
     /* text-decoration: underline; */
     opacity: 50%;
 }
@@ -204,7 +205,7 @@ header > h3 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 50px 50px;
-    padding-left: var(--thread-space);
+    margin-left: var(--thread-space);
 }
 
 .cards{
@@ -358,10 +359,34 @@ header > h3 {
     /* ヘッダ */
     header {
         margin: 20px auto;
+        position: relative;
     }
 
-    #nav-pc {
-        display: none;
+    #navigation {
+        display: fixed;
+    }
+
+    #navigation.is-opened {
+        display: block;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0px;
+        background-color: rgb(100, 100, 100, 0.8) ;
+        z-index: 20;
+    }
+
+    #navigation ul {
+        position: fixed;
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+        width: 80vw;
+        height: 100vh;
+        margin: 0;
+        padding-top: 100px;
+        border-radius: 0 10px 10px 0;
+        background-color: var(--body-color);
     }
 
     #hamburger-button {
@@ -373,12 +398,27 @@ header > h3 {
         border: none;
         background-color: transparent;
         cursor: pointer;
+        margin-right: 20px;
+        z-index: 30;
     }
 
     #hamburger-button span {
         width: 30px;
         height: 2px;
         background-color: var(--ribbon-color);
+        transition: 0.3s;
+    }
+
+    #hamburger-button.is-opened span:nth-of-type(1){
+        transform: translateY(12px) rotate(45deg);
+    }
+
+    #hamburger-button.is-opened span:nth-of-type(2){
+        opacity: 0;
+    }
+
+    #hamburger-button.is-opened span:nth-of-type(3){
+        transform: translateY(-12px) rotate(-45deg);
     }
 
     header > h3 {
@@ -452,7 +492,7 @@ header > h3 {
     }
 
     #card-area {
-        padding-left:0;
+        margin-left:0;
     }
 
     .cards{
