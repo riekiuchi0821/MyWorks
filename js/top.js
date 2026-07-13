@@ -1,10 +1,26 @@
 ///////////////* ハンバーガーメニュー *///////////////
 const hamburgerBtn = document.getElementById("hamburger-button");
 const navigation = document.getElementById("navigation");
+const body = document.body;
+const navLinks = document.querySelectorAll("#navigation a");
 
+//ハンバーガーメニューを開く
 hamburgerBtn.addEventListener("click", () => {
   hamburgerBtn.classList.toggle("is-opened");
   navigation.classList.toggle("is-opened");
+  body.classList.toggle("menu-open");
+});
+
+
+//各セクションに飛んだあと、メニューを閉じる
+function closeMemu(){
+  hamburgerBtn.classList.remove("is-opened");
+  navigation.classList.remove("is-opened");
+  body.classList.remove("menu-open");
+}
+
+navLinks.forEach((link)=>{
+  link.addEventListener("click", closeMemu);
 });
 
 
@@ -47,7 +63,7 @@ threadSections.forEach(function (value) {
 ///////////////* Contact Form の送信ボタン処理 *///////////////
 
 //Enterキーなどあらゆるsubmitイベントを監視するため、送信ボタンではなくFormで取得する
-const contactForm = document.querySelector(".contact-form");
+const contactForm = document.querySelector("#contact-form");
 contactForm.addEventListener("submit", validation);
 
 //送信ボタン押下後のバリデーション

@@ -280,6 +280,10 @@ header > h3 {
     margin-left: var(--thread-space);
 }
 
+#contact-form {
+    display: none;
+}
+
 .contact-table {
     width: 60%;
     max-width: 600px;
@@ -355,6 +359,10 @@ header > h3 {
 
 
 @media (max-width: 767px) {
+    /* メニュー開いている間はスクロール禁止 */
+    body.menu-open {
+        overflow: hidden;
+    }
 
     /* ヘッダ */
     header {
