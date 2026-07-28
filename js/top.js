@@ -108,9 +108,9 @@ function validation(event) {
   }
 
   //問題なければ、thank youページへ移動
-  //TODO:フォーム送信処理はPHPなど学習した後に実装する
   if (!hasError) {
-    window.location.href = "./thankyou/index.html";
+    contactForm.submit();
+    //window.location.href = "./thankyou/index.html";
   }
 }
 

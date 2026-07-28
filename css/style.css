@@ -280,9 +280,9 @@ header > h3 {
     margin-left: var(--thread-space);
 }
 
-#contact-form {
+/* #contact-form {
     display: none;
-}
+} */
 
 .contact-table {
     width: 60%;
