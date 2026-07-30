@@ -11,7 +11,6 @@ if($_SERVER['REQUEST_METHOD'] !== 'POST'){
 //フォームの値を受け取る
 $name = isset($_POST['yourname']) ? trim($_POST['yourname']) : '';
 $email = isset($_POST['email']) ? trim($_POST['email']) : '';
-$message = isset($_POST['message']) ? trim($_POST['message']) : '';
 
 
 //バリデーション(javascriptだと書き換えの心配があるため、php側でも処理する)
