@@ -39,8 +39,9 @@ $body = "お名前：{$name}\nメールアドレス：{$email}\n\nお問合せ�
 $to = 'rie.kiuchi.studio@gmail.com';
 
 //ヘッダ
-$headers = "From: no-reply@example.com\r\n";
+$headers = "From: contact@k-tsunagu-design.com\r\n";
 $headers .= "Reply-To: {$email}\r\n";
+$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
 mb_language('Japanese');
 mb_internal_encoding('UTF-8');
