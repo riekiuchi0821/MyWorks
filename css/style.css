@@ -200,19 +200,33 @@ header > h3 {
     padding-left: var(--thread-space);    
 }
 
-#card-area {
+.card-area {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 50px 50px;
     margin-left: var(--thread-space);
+    margin-bottom: 40px;
 }
 
-.cards{
-    width: 450px;
+.card-title {
+    font-size: 20px;
+    font-weight: 400;
 }
 
-.cards > img {
+.cards-lp{
+    width: 500px;
+}
+
+.cards-banner{
+    width: 300px;
+}
+
+.cards-lp > img {
+    width: 100%;
+}
+
+.cards-banner > img {
     width: 90%;
 }
 
@@ -234,6 +248,14 @@ header > h3 {
     border-radius: 12px;
     padding: 2px 16px;
 }
+
+.tool-wordpress {
+    background-color: #a4e7cb;
+    text-align: center;
+    border-radius: 12px;
+    padding: 2px 16px;
+}
+
 
 /* About */
 
@@ -503,15 +525,21 @@ header > h3 {
         padding-left: 0;
     }
 
-    #card-area {
+    .card-area {
         margin-left:0;
     }
 
-    .cards{
+    .cards-lp,
+    .cards-banner{
         width: 80%;
     }
 
-    .cards > img {
+    .cards-lp a {
+        font-size: 12px;
+    }
+
+    .cards-lp > img,
+    .cards-banner > img {
         width: 100%;
     }
 
