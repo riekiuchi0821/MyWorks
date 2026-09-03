@@ -32,9 +32,10 @@ header {
 .section-title {
     font-size: 48px;
     text-align: left;
-    margin: 100px 0 20px var(--thread-space);
+    margin-top: 100px;
+    margin-bottom: 20px;
     padding: 0 0 10px 20px;
-    border-bottom: solid 3px var(--ribbon-color);    
+    border-bottom: solid 3px var(--ribbon-color);
 }
 
 .ribbon-pc {
@@ -54,6 +55,19 @@ header {
 
 .ribbon-sp {
     display: none;
+}
+
+/* .ribbon-pc(position: absolute)の基準にするため、
+   セクション共通で position: relative を持たせる */
+.thread-sections {
+    position: relative;
+}
+
+/* 糸のレーン分、左側を空ける共通クラス
+   margin-leftにしているのは、各要素側で padding-left を別途持っていても
+   （例: .about-container の padding: 0 20px）競合しないようにするため */
+.thread-content {
+    margin-left: var(--thread-space);
 }
 
 
@@ -159,7 +173,6 @@ header > h3 {
 
 .main-message {
     width: 60%;
-    padding: 0 0 0 var(--thread-space);
 }
 
 .main-text {
@@ -196,14 +209,10 @@ header > h3 {
 }
 
 /* Works */
-#works {
-    position: relative;
-}
 
 .works-title{
     font-size: 24px;
     text-align: center;
-    padding-left: var(--thread-space);    
 }
 
 .card-area {
@@ -211,7 +220,6 @@ header > h3 {
     flex-wrap: wrap;
     justify-content: center;
     gap: 50px 50px;
-    margin-left: var(--thread-space);
     margin-bottom: 40px;
 }
 
@@ -265,14 +273,10 @@ header > h3 {
 
 /* About */
 
-#about {
-    position: relative;
-}
-
 .about-container {
     display: flex;
     gap: 0 5%;
-    margin: 100px 0 0 var(--thread-space);
+    margin-top: 100px;
     padding: 0 20px;
 }
 
@@ -300,13 +304,6 @@ header > h3 {
 }
 
 /* Contact */
-#contact {
-    position: relative;
-}
-
-#contact > p {
-    margin-left: var(--thread-space);
-}
 
 /* #contact-form {
     display: none;
@@ -390,6 +387,12 @@ header > h3 {
     /* メニュー開いている間はスクロール禁止 */
     body.menu-open {
         overflow: hidden;
+    }
+
+    /* SPでは糸のレーンを使わないので、共通の左空けをリセット。
+       各セクション側で必要な分だけ個別に指定する */
+    .thread-content {
+        margin-left: 0;
     }
 
     /* ヘッダ */
@@ -528,11 +531,6 @@ header > h3 {
     /* Works */
     .works-title {
         font-size: 16px;
-        padding-left: 0;
-    }
-
-    .card-area {
-        margin-left:0;
     }
 
     .cards-lp,
