@@ -63,9 +63,9 @@ header {
     position: relative;
 }
 
-/* 糸のレーン分、左側を空ける共通クラス
-   margin-leftにしているのは、各要素側で padding-left を別途持っていても
-   （例: .about-container の padding: 0 20px）競合しないようにするため */
+/* 糸のレーン分、左側を空ける共通クラス。
+   各セクションの中身をまとめて1つのdivで囲み、そのdivにだけ付ける。
+   margin-leftなのは、中の要素が別途 padding-left を持っていても競合しないようにするため */
 .thread-content {
     margin-left: var(--thread-space);
 }
