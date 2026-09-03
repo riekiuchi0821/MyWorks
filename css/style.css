@@ -244,10 +244,13 @@ header > h3 {
 }
 
 .my-name {
-    grid-area: name;
     text-align: right;
     font-size: 24px;
-    padding-right: 40px;
+}
+
+
+.my-name-s {
+    font-size: 16px;   
 }
 
 /* Works */
@@ -388,7 +391,7 @@ header > h3 {
     padding: 10px 60px;
     border-radius: 30px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 20apx;
     font-family: inherit; /* 親を継承 */
 }
 
