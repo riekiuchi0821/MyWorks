@@ -54,17 +54,21 @@ const observer = new IntersectionObserver(
   },
 );
 
-// 各セクションの監視を開始する
-observer.observe(mainVisual);
-threadSections.forEach(function (value) {
-  observer.observe(value);
-});
+// 各セクションの監視を開始する（糸の演出があるページのみ）
+if (mainVisual) {
+  observer.observe(mainVisual);
+  threadSections.forEach(function (value) {
+    observer.observe(value);
+  });
+}
 
 ///////////////* Contact Form の送信ボタン処理 *///////////////
 
 //Enterキーなどあらゆるsubmitイベントを監視するため、送信ボタンではなくFormで取得する
 const contactForm = document.querySelector("#contact-form");
-contactForm.addEventListener("submit", validation);
+if (contactForm) {
+  contactForm.addEventListener("submit", validation);
+}
 
 //送信ボタン押下後のバリデーション
 function validation(event) {
