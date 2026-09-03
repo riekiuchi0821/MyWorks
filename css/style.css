@@ -14,10 +14,14 @@ html {
     scroll-behavior: smooth;
 }
 
+h1,h2,h3 {
+    font-weight: 500;
+}
 
 body {
     margin:0 auto;
     font-family: "Hiragino Mincho ProN", "Shippori Mincho Regular", serif;
+    font-weight: 400;
     background-color: var(--body-color);
 }
 
@@ -208,6 +212,43 @@ header > h3 {
     z-index: 1;
 }
 
+/* Message */
+.message-area {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-areas:
+        "photo contents"
+        "photo name";
+    align-items: center;
+    gap: 24px;
+}
+
+.message-photo {
+    grid-area: photo;
+    width: 300px;
+}
+
+.message-photo img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.message-contents {
+    grid-area: contents;
+}
+
+.message-title {
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.my-name {
+    grid-area: name;
+    text-align: right;
+    font-size: 24px;
+    padding-right: 40px;
+}
+
 /* Works */
 
 .works-title{
@@ -390,9 +431,10 @@ header > h3 {
     }
 
     /* SPでは糸のレーンを使わないので、共通の左空けをリセット。
-       各セクション側で必要な分だけ個別に指定する */
+       代わりに全セクション共通で左右にpaddingを効かせる */
     .thread-content {
         margin-left: 0;
+        padding: 0 40px;
     }
 
     /* ヘッダ */
@@ -475,10 +517,10 @@ header > h3 {
     }
 
     .section-title {
-        font-size: 24px; 
-        margin: 50px 20px 20px var(--thread-left); /*糸の位置から線を引く*/
-        padding-bottom: 5px;
-        border-bottom: solid 1px var(--ribbon-color);    
+        font-size: 24px;
+        margin: 50px 0 20px 0; /* 左右の余白は共通の.thread-contentのpaddingに任せる */
+        padding: 0 0 5px 0;
+        border-bottom: solid 1px var(--ribbon-color);
     }
 
     .ribbon-sp {
@@ -528,6 +570,20 @@ header > h3 {
     }
     
 
+    /* Message */
+    .message-area {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "contents"
+            "photo"
+            "name";
+    }
+
+    .message-photo {
+        width: 80%;
+        margin: 0 auto;
+    }
+
     /* Works */
     .works-title {
         font-size: 16px;
@@ -551,7 +607,7 @@ header > h3 {
     .about-container {
         display: block;
         margin: 0;
-        padding: 0 40px;
+        padding: 0; /* 左右の余白は共通の.thread-contentのpaddingに任せる */
         font-size: 14px;
     }
 
@@ -575,10 +631,7 @@ header > h3 {
 
     
     /* Contact */
-    #contact p{
-        margin-left: var(--thread-left);
-        padding-right: 40px;
-    }
+    /* 左右の余白は共通の.thread-contentのpaddingに任せる */
 
     .contact-table {
         width: 80%;
