@@ -65,6 +65,7 @@ header {
    セクション共通で position: relative を持たせる */
 .thread-sections {
     position: relative;
+    scroll-margin-top: 40px;
 }
 
 /* 糸のレーン分、左側を空ける共通クラス。
@@ -379,19 +380,19 @@ header > h3 {
     height: 220px;
 }
 
-#send-button {
+.send-button-design {
     display: block; /* 中央揃えするためにはdivにする必要がある */
     margin: 16px auto 0;
     background-color: var(--button-color);
     border: none;
-    padding: 5px 30px;
+    padding: 10px 60px;
     border-radius: 30px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 20px;
     font-family: inherit; /* 親を継承 */
 }
 
-#send-button:hover {
+.send-button-design:hover{
     opacity: 0.8;
 }
 
