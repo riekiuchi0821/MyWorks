@@ -162,10 +162,6 @@ a:hover {
     list-style: none;
 }
 
-#navigation a {
-
-}
-
 #navigation a:hover {
     /* text-decoration: underline; */
     opacity: 50%;
@@ -556,9 +552,14 @@ a:hover {
     }
 
     /* ヘッダ */
-    header {
+    .header {
         margin: 20px auto;
         position: relative;
+        padding: 0 20px;     
+    }
+
+    .header-logo {
+        width: 140px;
     }
 
     #navigation {
@@ -637,14 +638,15 @@ a:hover {
     .section-title {
         font-size: 24px;
         margin: 50px 0 20px 0; /* 左右の余白は共通の.thread-contentのpaddingに任せる */
-        padding: 0 0 5px 0;
+        padding: 0 0 6px 0;
+        text-align: center;
         border-bottom: solid 1px var(--ribbon-color);
     }
 
     .ribbon-sp {
         display: block;
         position: absolute;
-        left: 20px;
+        left: -20px;
         top: 30px;    
         width: 40px;
         height: 25px;
@@ -685,7 +687,6 @@ a:hover {
         display: none;      
     }
     
-
     /* Message */
     .message-area {
         grid-template-columns: 1fr;
