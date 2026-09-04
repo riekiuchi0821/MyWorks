@@ -11,6 +11,7 @@ if($_SERVER['REQUEST_METHOD'] !== 'POST'){
 //フォームの値を受け取る
 $name = isset($_POST['yourname']) ? trim($_POST['yourname']) : '';
 $email = isset($_POST['email']) ? trim($_POST['email']) : '';
+$message = isset($_POST['message']) ? trim($_POST['message']) : '';
 
 
 //バリデーション(javascriptだと書き換えの心配があるため、php側でも処理する)
@@ -42,7 +43,7 @@ $headers = "From: contact@k-tsunagu-design.com\r\n";
 $headers .= "Reply-To: {$email}\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
-mb_language('Japanese');
+mb_language('uni'); // UTF-8のまま送信する（'Japanese'だと本文がISO-2022-JPに変換され、上のCharset=UTF-8指定と食い違って文字化けする）
 mb_internal_encoding('UTF-8');
 
 $sent = mb_send_mail($to, $subject, $body, $headers);
