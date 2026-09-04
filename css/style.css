@@ -563,6 +563,7 @@ a:hover {
     }
 
     #navigation {
+        display: none; /* 閉じている間は要素そのものを消し、クリック/フォーカスとも当たらないようにする */
         position: fixed;
     }
 
@@ -623,11 +624,6 @@ a:hover {
 
     #hamburger-button.is-opened span:nth-of-type(3){
         transform: translateY(-12px) rotate(-45deg);
-    }
-
-    header > h3 {
-        padding-left: 20px;
-        font-size: 20px;
     }
 
     /* 各セクションのタイトル */
