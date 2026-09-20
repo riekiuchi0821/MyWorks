@@ -9,15 +9,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" href="img/favicon.png" />
-    <title>府中・多摩エリアの小規模事業者向けWebサイト制作｜むさしのつむぎ</title>
+    <title>
+      府中・多摩エリアの小規模事業者向けWebサイト制作｜むさしのつむぎ
+    </title>
   </head>
   <body>
     <!-- ヘッダー -->
     <header class="header">
       <!-- 名前 -->
       <div class="header-logo">
-        <a  href="index.html">
-          <img class="header-logo-img" src="img/musashinotsumugi.svg" alt="むさしのつむぎロゴ" />
+        <a href="index.html">
+          <img
+            class="header-logo-img"
+            src="img/musashinotsumugi.svg"
+            alt="むさしのつむぎロゴ"
+          />
         </a>
       </div>
 
@@ -89,12 +95,13 @@
                     「府中の方にどう見つけてもらい、どう選んでもらうか」を一緒に考え、<br />
                     地域の魅力が伝わるWebサイト制作をお手伝いします。<br />
                   </p>
-                </div>             
-                <div class="my-name">
-                  <p>むさしのつむぎ<br>
-                  木内理恵<span class="my-name-s">（きうち りえ）</span></p>
                 </div>
-                
+                <div class="my-name">
+                  <p>
+                    むさしのつむぎ<br />
+                    木内理恵<span class="my-name-s">（きうち りえ）</span>
+                  </p>
+                </div>
               </div>
             </div>
           </section>
@@ -240,6 +247,19 @@
             <!-- <p>rie.kiuchi.studio@gmail.com</p> -->
 
             <form id="contact-form" action="send.php" method="post">
+
+              <!-- スパム対策 -->
+              <div class="honeypot" aria-hidden="true">
+                <label for="website">Website</label>
+                <input
+                  type="text"
+                  name="website"
+                  id="website"
+                  tabindex="-1"
+                  autocomplete="off"
+                />
+              </div>
+
               <div class="contact-table">
                 <div class="form-row first-row">
                   <div class="table-title">

@@ -12,14 +12,18 @@ if($_SERVER['REQUEST_METHOD'] !== 'POST'){
 $name = isset($_POST['yourname']) ? trim($_POST['yourname']) : '';
 $email = isset($_POST['email']) ? trim($_POST['email']) : '';
 $message = isset($_POST['message']) ? trim($_POST['message']) : '';
+$website = isset($_POST['website']) ? trim($_POST['website']) : '';
 
+// ハニーポットに入力があった場合はbotと判断
+if ($website !== '') {
+    exit;
+}
 
 //バリデーション(javascriptだと書き換えの心配があるため、php側でも処理する)
 $errors = [];
 if($name ==='') $errors[] = 'お名前を入力してください。';
-if($email ==='' || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = '正しいメールアドレスを入力してください。';
+if($email ==='' || !filter_var($email, FILTER_VALIDATE_EMAIL) || preg_match('/[\r\n]/', $email)) $errors[] = '正しいメールアドレスを入力してください。';
 if($message ==='') $errors[] = 'メッセージを入力してください。';
-
 if(!empty($errors)) {
     echo '<h3>入力内容を確認してください。</h3>';
 

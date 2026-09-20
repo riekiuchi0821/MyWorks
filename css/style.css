@@ -523,6 +523,12 @@ a:hover {
     opacity: 0.8;
 }
 
+/* スパム対策 */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+}
+
 @media (max-width: 767px) {
     .policy-content {
         padding: 40px 20px 80px;
