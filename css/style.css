@@ -3,6 +3,11 @@
   --ribbon-color: #FD2621;
   --button-color: #FFC3C4;
   --text-color: #302f2a;
+  --figma-color: #B0D4E2;
+  --photoshop-color: #FCC0EA;
+  --wordpress-color: #a4e7cb;
+  --tag-bg-color: #ffffff;
+  --fontsize-button: 20px;
   --thread-space: 100px; /* 糸のレーンを左に100px確保している */  
   --thread-left: 40px; /* 糸が引かれている左からの位置*/
 }
@@ -270,6 +275,7 @@ a:hover {
 .card-title {
     font-size: 20px;
     font-weight: 400;
+    margin-bottom: 8px;
 }
 
 .cards-lp{
@@ -293,27 +299,40 @@ a:hover {
     width: 80px;
 }
 
-.tool-figma {
-    background-color: #B0D4E2;
+.card-tool {
+    margin-bottom: 32px;
+}
+
+.card-visit {
     text-align: center;
-    border-radius: 12px;
-    padding: 2px 16px;    
+    margin-bottom: 32px;
+}
+
+.card-visit-button {
+    font-size: var(--fontsize-button);
+    background-color: var(--button-color);
+    padding: 8px 32px;
+    border-radius: 30px;
+}
+
+.tool-tag {
+    text-align: center;
+    border-radius: 4px;
+    padding: 2px 16px;
+    background-color: var(--tag-bg-color);
+}
+
+.tool-figma {
+    border: 2px solid var(--figma-color);  
 }
 
 .tool-photoshop {
-    background-color: #FCC0EA;
-    text-align: center;
-    border-radius: 12px;
-    padding: 2px 16px;
+    border: 2px solid var(--photoshop-color);
 }
 
 .tool-wordpress {
-    background-color: #a4e7cb;
-    text-align: center;
-    border-radius: 12px;
-    padding: 2px 16px;
+    border: 1px solid var(--wordpress-color);
 }
-
 
 /* About */
 
@@ -391,7 +410,7 @@ a:hover {
     padding: 10px 60px;
     border-radius: 30px;
     cursor: pointer;
-    font-size: 20apx;
+    font-size: var(--fontsize-button);
     font-family: inherit; /* 親を継承 */
     text-decoration: none;
     color: inherit; /* 親を継承 */
@@ -720,6 +739,15 @@ a:hover {
     .cards-lp > img,
     .cards-banner > img {
         width: 100%;
+    }
+
+    .source {
+        font-size: 12px;
+        width: 60px;
+    }
+
+    .tool-tag {
+        font-size: 12px;
     }
 
     /* About */
