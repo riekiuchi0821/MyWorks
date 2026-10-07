@@ -1,13 +1,14 @@
 :root {
   --body-color: #FFFDF2;
   --ribbon-color: #FD2621;
-  --button-color: #FFC3C4;
-  --text-color: #302f2a;
+  --button-color: #C45A55;
+  --button-font-color: #ffffff;
+  --text-color: #3B352F;
   --figma-color: #B0D4E2;
   --photoshop-color: #FCC0EA;
   --wordpress-color: #a4e7cb;
   --tag-bg-color: #ffffff;
-  --fontsize-button: 20px;
+  --fontsize-button: 16px;
   --thread-space: 100px; /* 糸のレーンを左に100px確保している */  
   --thread-left: 40px; /* 糸が引かれている左からの位置*/
 }
@@ -310,9 +311,7 @@ a:hover {
 
 .card-visit-button {
     font-size: var(--fontsize-button);
-    background-color: var(--button-color);
     padding: 8px 32px;
-    border-radius: 30px;
 }
 
 .tool-tag {
@@ -401,23 +400,23 @@ a:hover {
     height: 220px;
 }
 
-.send-button-design {
-    display: block; /* 中央揃えするためにはdivにする必要がある */
+.button-design {
+    display: block;
     width: fit-content; /* input(置換要素)以外(a, buttonなど)でも幅を中身に合わせて中央揃えを効かせる */
     margin: 16px auto 0;
-    background-color: var(--button-color);
-    border: none;
+    border: 2px solid var(--button-color);
+    color: var(--text-color);
+    background-color: transparent;
     padding: 10px 60px;
     border-radius: 30px;
     cursor: pointer;
     font-size: var(--fontsize-button);
-    font-family: inherit; /* 親を継承 */
+    font-family: inherit; /* inputは親のフォントを継承しないので明示する */
     text-decoration: none;
-    color: inherit; /* 親を継承 */
 }
 
-.send-button-design:hover{
-    opacity: 0.8;
+.button-design:hover{
+    opacity: 0.5;
 }
 
 .error-message {
@@ -522,24 +521,6 @@ a:hover {
 
 #thankyou .contents {
     margin: 10px 0 50px 0;
-}
-
-#home-button {
-    font-size: 20px;
-    background-color: var(--button-color);
-    border: none;
-    padding: 5px 30px;
-    border-radius: 30px;
-    font-family: inherit;
-    text-decoration: none;
-}
-
-#home-button:visited {
-    color: inherit;
-}
-
-#home-button:hover {
-    opacity: 0.8;
 }
 
 /* スパム対策 */
