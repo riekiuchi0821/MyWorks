@@ -2,12 +2,8 @@
   --body-color: #FFFDF2;
   --ribbon-color: #FD2621;
   --button-color: #C45A55;
-  --button-font-color: #ffffff;
   --text-color: #3B352F;
-  --figma-color: #B0D4E2;
-  --photoshop-color: #FCC0EA;
-  --wordpress-color: #a4e7cb;
-  --tag-bg-color: #ffffff;
+  --text-color-tool:#7a4b34;
   --fontsize-button: 16px;
   --thread-space: 100px; /* 糸のレーンを左に100px確保している */  
   --thread-left: 40px; /* 糸が引かれている左からの位置*/
@@ -302,6 +298,7 @@ a:hover {
 
 .card-tool {
     margin-bottom: 32px;
+    color: var(--text-color-tool);
 }
 
 .card-visit {
@@ -315,22 +312,7 @@ a:hover {
 }
 
 .tool-tag {
-    text-align: center;
-    border-radius: 4px;
     padding: 2px 16px;
-    background-color: var(--tag-bg-color);
-}
-
-.tool-figma {
-    border: 2px solid var(--figma-color);  
-}
-
-.tool-photoshop {
-    border: 2px solid var(--photoshop-color);
-}
-
-.tool-wordpress {
-    border: 1px solid var(--wordpress-color);
 }
 
 /* About */
