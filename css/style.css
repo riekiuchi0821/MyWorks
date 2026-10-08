@@ -34,8 +34,9 @@ a {
     color: var(--text-color);
 }
 
-a:hover {
-    opacity: 50%;
+a:hover,
+.button-design:hover { /* inputの送信ボタンはaではないので併記 */
+    opacity: 0.5;
 }
 
 .section-title {
@@ -79,7 +80,6 @@ a:hover {
 .thread-content {
     margin-left: var(--thread-space);
 }
-
 
 /* 糸含む全体 */
 .page-wrapper {
@@ -164,12 +164,6 @@ a:hover {
     list-style: none;
 }
 
-.global-nav a:hover {
-    /* text-decoration: underline; */
-    opacity: 50%;
-}
-
-
 /* Main Visual */
 .main-visual {
     position: relative;
@@ -248,7 +242,6 @@ a:hover {
     text-align: right;
     font-size: 24px;
 }
-
 
 .my-name-s {
     font-size: 16px;   
@@ -393,10 +386,6 @@ a:hover {
     text-decoration: none;
 }
 
-.button-design:hover{
-    opacity: 0.5;
-}
-
 .error-message {
     color: var(--ribbon-color);
 }
@@ -424,10 +413,6 @@ a:hover {
 
 .arrow {
     height: 100%;
-}
-
-.pagetop:hover {
-    opacity: 50%;
 }
 
 /* Privacy Policy */
