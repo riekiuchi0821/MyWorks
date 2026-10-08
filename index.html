@@ -7,6 +7,12 @@
       content="府中・多摩エリアのWebサイト制作を承ります。「府中の方にどう見つけてもらい、どう選んでもらうか」を一緒に考え、地域の魅力が伝わるWebサイト制作をお手伝いします。"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500&family=Shippori+Mincho&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="icon" href="img/favicon.png" />
     <title>
@@ -28,14 +34,14 @@
       </div>
 
       <!-- ナビゲーション -->
-      <nav id="navigation">
+      <nav id="navigation" class="global-nav">
         <ul>
           <li><a href="index.html#works">Works</a></li>
           <li><a href="index.html#about">About</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </nav>
-      <button id="hamburger-button" type="button">
+      <button id="hamburger-button" class="hamburger" type="button">
         <span></span>
         <span></span>
         <span></span>
@@ -47,7 +53,7 @@
       <!-- Main Visual -->
       <main>
         <article>
-          <section id="main-visual">
+          <section id="main-visual" class="main-visual">
             <picture>
               <!-- 500px以下：スマホ用 -->
               <source media="(max-width: 500px)" srcset="img/hero-sp.jpg" />
@@ -60,7 +66,7 @@
                 alt="自画像"
               />
             </picture>
-            <div id="thread-line-top"></div>
+            <div id="thread-line-top" class="thread-line-top"></div>
             <div class="main-message thread-content">
               <h1 class="main-text">
                 <span>想い</span>を整理し<br />伝わるWebサイトに
@@ -118,32 +124,41 @@
               <h3 class="works-title">Webサイト</h3>
               <div class="card-area">
                 <div class="cards-lp">
+                  <img src="img/Fleur_PC.jpg" alt="花屋フルールつむぎHP" />
+                  <div class="card-title">フラワーショップ</div>
+                  <div class="card-tool">
+                    <span class="source">ツール</span>
+                    <span class="tool-tag">Wordpress / Swell</span>
+                  </div>
+                  <div class="card-visit">
+                    <a class="card-visit-button" href="https://musashino-tsumugi.com/fleur-tsumugi/">Webサイトを見る</a>
+                  </div>
+                </div>
+              </div>
+              <div class="card-area">
+                <div class="cards-lp">
                   <img src="img/fuchu-lp-pc.jpg" alt="まち歩きイベントLP" />
-                  <p class="card-title">府中まちあるきイベント</p>
-                  <p>
-                    <a href="https://musashino-tsumugi.com/demo-fuchu-lp/"
-                      >https://musashino-tsumugi.com/demo-fuchu-lp/</a
-                    >
-                  </p>
-                  <p>
-                    <span class="source">ツール</span
-                    ><span class="tool-figma">Wordpress</span>
-                  </p>
+                  <div class="card-title">まちあるきイベントLP</div>
+                  <div class="card-tool">
+                    <span class="source">ツール</span>
+                    <span class="tool-tag">Wordpress / Swell</span>
+                  </div>
+                  <div class="card-visit">
+                    <a class="card-visit-button" href="https://musashino-tsumugi.com/demo-fuchu-lp/">Webサイトを見る</a>
+                  </div>
                 </div>
               </div>
               <div class="card-area">
                 <div class="cards-lp">
                   <img src="img/clinic.jpg" alt="歯科クリニックHP" />
-                  <p class="card-title">歯科クリニック</p>
-                  <p>
-                    <a href="https://musashino-tsumugi.com/dental-site/"
-                      >https://musashino-tsumugi.com/dental-site/</a
-                    >
-                  </p>
-                  <p>
-                    <span class="source">ツール</span
-                    ><span class="tool-figma">Wordpress</span>
-                  </p>
+                  <div class="card-title">歯科クリニック</div>
+                  <div class="card-tool">
+                    <span class="source">ツール</span>
+                    <span class="tool-tag">Wordpress / Original</span>
+                  </div>
+                  <div class="card-visit">
+                    <a class="card-visit-button" href="https://musashino-tsumugi.com/dental-site/">Webサイトを見る</a>
+                  </div>
                 </div>
               </div>
               <h3 class="works-title">バナー</h3>
@@ -154,25 +169,25 @@
                     alt="花火大会"
                   />
                   <p>花火大会</p>
-                  <p>
+                  <p class="card-tool">
                     <span class="source">ツール</span
-                    ><span class="tool-figma">Figma</span>
+                    ><span class="tool-tag">Figma</span>
                   </p>
                 </div>
                 <div class="cards-banner">
                   <img src="img/14771_kiuchirie_01.png" alt="夏休み家族旅行" />
                   <p>夏休み家族旅行特集</p>
-                  <p>
+                  <p class="card-tool">
                     <span class="source">ツール</span
-                    ><span class="tool-figma">Figma</span>
+                    ><span class="tool-tag">Figma</span>
                   </p>
                 </div>
                 <div class="cards-banner">
                   <img src="img/14771_kiuchirie_02.png" alt="中古車セール" />
                   <p>中古車セール</p>
-                  <p>
+                  <p class="card-tool">
                     <span class="source">ツール</span>
-                    <span class="tool-figma">Figma</span>
+                    <span class="tool-tag">Figma</span>
                   </p>
                 </div>
                 <div class="cards-banner">
@@ -181,9 +196,9 @@
                     alt="GW親子特別イベント"
                   />
                   <p>GW親子特別イベント</p>
-                  <p>
-                    <span class="source">ツール</span
-                    ><span class="tool-photoshop">Photoshop</span>
+                  <p class="card-tool">
+                    <span class="source">ツール</span>
+                    <span class="tool-tag">Photoshop</span>
                   </p>
                 </div>
               </div>
@@ -220,7 +235,7 @@
                     地元で、観光ガイドをしています。<br />
                   </p>
                   <h4>Skills</h4>
-                  <div id="skill-grid">
+                  <div class="skill-grid">
                     <div>Webデザイン</div>
                     <div>Photoshop / Figma</div>
 
@@ -233,7 +248,7 @@
           </section>
 
           <section id="contact" class="thread-sections">
-            <div class="thread-line"></div>
+            <div class="thread-line thread-line--short"></div>
             <div class="thread-content">
               <div class="section-title-wrapper">
                 <h2 class="section-title">Contact</h2>
@@ -247,7 +262,6 @@
             <!-- <p>rie.kiuchi.studio@gmail.com</p> -->
 
             <form id="contact-form" action="send.php" method="post">
-
               <!-- スパム対策 -->
               <div class="honeypot" aria-hidden="true">
                 <label for="website">Website</label>
@@ -266,7 +280,7 @@
                     <label for="yourname">お名前</label>
                   </div>
                   <div class="table-input">
-                    <input type="text" name="yourname" id="yourname" />
+                    <input type="text" name="yourname" id="yourname" class="form-input" />
                     <p class="error-message"></p>
                   </div>
                 </div>
@@ -275,7 +289,7 @@
                     <label for="email">メールアドレス</label>
                   </div>
                   <div class="table-input">
-                    <input type="email" name="email" id="email" />
+                    <input type="email" name="email" id="email" class="form-input" />
                     <p class="error-message"></p>
                   </div>
                 </div>
@@ -284,7 +298,7 @@
                     <label for="message">お問合せ内容</label>
                   </div>
                   <div class="table-input">
-                    <textarea name="message" id="message"></textarea>
+                    <textarea name="message" id="message" class="form-textarea"></textarea>
                     <p class="error-message"></p>
                   </div>
                 </div>
@@ -293,7 +307,7 @@
                 type="submit"
                 value="送信する"
                 id="send-button"
-                class="send-button-design"
+                class="button-design"
               />
             </form>
           </section>

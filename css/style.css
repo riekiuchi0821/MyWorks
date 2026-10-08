@@ -1,9 +1,13 @@
 :root {
   --body-color: #FFFDF2;
   --ribbon-color: #FD2621;
-  --button-color: #FFC3C4;
-  --text-color: #302f2a;
-  --thread-space: 100px; /* 糸のレーンを左に100px確保している */  
+  --button-color: #C45A55;
+  --text-color: #3B352F;
+  --text-color-tool:#7a4b34;
+  --font-body: "Noto Serif JP", "Yu Mincho", serif;
+  --font-display: "Shippori Mincho", "Yu Mincho", serif; /* FV用 */
+  --fontsize-button: 16px;
+  --thread-space: 100px; /* 糸のレーンを左に100px確保している */
   --thread-left: 40px; /* 糸が引かれている左からの位置*/
 }
 
@@ -15,15 +19,17 @@ html {
     scroll-behavior: smooth;
 }
 
-h1,h2,h3 {
+h1, h2, h3, h4 {
     font-weight: 500;
 }
 
 body {
     color: var(--text-color);
     margin:0 auto;
-    font-family: "Hiragino Mincho ProN", "Shippori Mincho Regular", serif;
-    font-weight: 400;
+    font-family: var(--font-body);
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
     background-color: var(--body-color);
 }
 
@@ -32,8 +38,9 @@ a {
     color: var(--text-color);
 }
 
-a:hover {
-    opacity: 50%;
+a:hover,
+.button-design:hover { /* inputの送信ボタンはaではないので併記 */
+    opacity: 0.5;
 }
 
 .section-title {
@@ -48,12 +55,12 @@ a:hover {
 .ribbon-pc {
     position: absolute;
     left: 0px;
-    top: -20px;    
+    top: -20px;
     width: 80px;
     height: 50px;
     z-index: 5;
     opacity: 0;
-    transition: opacity 1s ease;     
+    transition: opacity 1s ease;
 }
 
 .ribbon-pc.scroll {
@@ -78,7 +85,6 @@ a:hover {
     margin-left: var(--thread-space);
 }
 
-
 /* 糸含む全体 */
 .page-wrapper {
     position: relative;
@@ -89,7 +95,7 @@ a:hover {
 /* 糸 */
 
 /* メインセクションの糸 */
-#thread-line-top {
+.thread-line-top {
     position: absolute;
     top: 80px;
     left: var(--thread-left);
@@ -103,7 +109,7 @@ a:hover {
     transition: transform 1.5s ease 0.5s;
 }
 
-#thread-line-top.scroll {
+.thread-line-top.scroll {
     transform: scaleY(1);
 }
 
@@ -125,12 +131,12 @@ a:hover {
 }
 
 /* 最後のセクションのみ糸を短く */
-#contact .thread-line {
+.thread-line--short {
     height: 100%;
 }
 
 /* ナビゲーション */
-#hamburger-button {
+.hamburger {
     display: none;
 }
 
@@ -151,27 +157,20 @@ a:hover {
     width: 100%;
 }
 
-#navigation ul {
+.global-nav ul {
     font-size: 20px;
     display: flex;
     padding-left: 0;
     column-gap: 60px;
 }
 
-#navigation li {
+.global-nav li {
     list-style: none;
 }
 
-#navigation a:hover {
-    /* text-decoration: underline; */
-    opacity: 50%;
-}
-
-
 /* Main Visual */
-#main-visual {
+.main-visual {
     position: relative;
-    /* height: 80vh; */
     height: clamp(600px, 80vh, 750px);
 }
 
@@ -180,12 +179,13 @@ a:hover {
 }
 
 .main-text {
-    position: relative; 
+    position: relative;
     font-size: 48px;
     z-index: 12;
     margin: 0;
     padding: 130px 0 0 0;
-    font-weight: 300;
+    font-family: var(--font-display);
+    font-weight: 400; /* Shippori Minchoは400が最細 */
 }
 
 .main-text > span {
@@ -196,8 +196,9 @@ a:hover {
     position: relative;
     padding: 24px 0 0 5px;
     z-index: 11;
-    font-size: 24px;   
-    font-weight: 300;
+    font-size: 24px;
+    font-family: var(--font-display);
+    font-weight: 400;
     line-height: 1.8;
 }
 
@@ -239,7 +240,6 @@ a:hover {
 
 .message-title {
     font-size: 28px;
-    font-weight: 400;
 }
 
 .my-name {
@@ -247,9 +247,8 @@ a:hover {
     font-size: 24px;
 }
 
-
 .my-name-s {
-    font-size: 16px;   
+    font-size: 16px;
 }
 
 /* Works */
@@ -269,7 +268,7 @@ a:hover {
 
 .card-title {
     font-size: 20px;
-    font-weight: 400;
+    margin-bottom: 8px;
 }
 
 .cards-lp{
@@ -293,27 +292,24 @@ a:hover {
     width: 80px;
 }
 
-.tool-figma {
-    background-color: #B0D4E2;
-    text-align: center;
-    border-radius: 12px;
-    padding: 2px 16px;    
+.card-tool {
+    margin-bottom: 32px;
+    color: var(--text-color-tool);
 }
 
-.tool-photoshop {
-    background-color: #FCC0EA;
+.card-visit {
     text-align: center;
-    border-radius: 12px;
+    margin-bottom: 32px;
+}
+
+.card-visit-button {
+    font-size: var(--fontsize-button);
+    padding: 8px 32px;
+}
+
+.tool-tag {
     padding: 2px 16px;
 }
-
-.tool-wordpress {
-    background-color: #a4e7cb;
-    text-align: center;
-    border-radius: 12px;
-    padding: 2px 16px;
-}
-
 
 /* About */
 
@@ -341,17 +337,13 @@ a:hover {
     margin: 0;
 }
 
-#skill-grid {
+.skill-grid {
     display: grid;
     grid-template-columns: 120px 1fr;
     row-gap: 10px;
 }
 
 /* Contact */
-
-/* #contact-form {
-    display: none;
-} */
 
 .contact-table {
     width: 60%;
@@ -365,40 +357,36 @@ a:hover {
 }
 
 .table-title {
-    padding: 20px 0 10px 0;    
+    padding: 20px 0 10px 0;
 }
 
 .table-input {
     padding: 10px 0;
 }
 
-#yourname, #email {
+.form-input {
     width: 100%;
     height: 48px;
 }
 
-#message {
+.form-textarea {
     width: 100%;
     height: 220px;
 }
 
-.send-button-design {
-    display: block; /* 中央揃えするためにはdivにする必要がある */
+.button-design {
+    display: block;
     width: fit-content; /* input(置換要素)以外(a, buttonなど)でも幅を中身に合わせて中央揃えを効かせる */
     margin: 16px auto 0;
-    background-color: var(--button-color);
-    border: none;
+    border: 2px solid var(--button-color);
+    color: var(--text-color);
+    background-color: transparent;
     padding: 10px 60px;
     border-radius: 30px;
     cursor: pointer;
-    font-size: 20apx;
-    font-family: inherit; /* 親を継承 */
+    font-size: var(--fontsize-button);
+    font-family: inherit; /* inputは親のフォントを継承しないので明示する */
     text-decoration: none;
-    color: inherit; /* 親を継承 */
-}
-
-.send-button-design:hover{
-    opacity: 0.8;
 }
 
 .error-message {
@@ -411,27 +399,16 @@ a:hover {
     margin: 0 0 50px 0;
 }
 
-.privacy {
-    text-decoration: none;
-    color: var(--text-color);
-}
-
 .pagetop {
     display: flex;
     align-items: center;
     height: 80px;
     width: 110px;
     margin: 100px auto 50px auto;
-    text-decoration: none;
-    color: var(--text-color);
 }
 
 .arrow {
     height: 100%;
-}
-
-.pagetop:hover {
-    opacity: 50%;
 }
 
 /* Privacy Policy */
@@ -443,7 +420,6 @@ a:hover {
 
 .policy-title {
     font-size: 40px;
-    font-weight: 500;
     margin: 0 0 40px;
     padding-bottom: 16px;
     border-bottom: solid 3px var(--ribbon-color);
@@ -460,7 +436,6 @@ a:hover {
 
 .policy-heading {
     font-size: 22px;
-    font-weight: 500;
     margin: 0 0 16px;
     padding-bottom: 8px;
     border-bottom: solid 2px var(--ribbon-color);
@@ -468,7 +443,6 @@ a:hover {
 
 .policy-subheading {
     font-size: 18px;
-    font-weight: 500;
     margin: 24px 0 12px;
 }
 
@@ -489,38 +463,15 @@ a:hover {
     margin: 0 0 80px;
 }
 
-.policy-home-link {
-    display: inline-block;
-    color: inherit;
-}
-
 /* Thank You */
-#thankyou {
+.thankyou {
     width: 50%;
     margin: 200px auto 0 auto;
     text-align: center;
 }
 
-#thankyou .contents {
+.thankyou .contents {
     margin: 10px 0 50px 0;
-}
-
-#home-button {
-    font-size: 20px;
-    background-color: var(--button-color);
-    border: none;
-    padding: 5px 30px;
-    border-radius: 30px;
-    font-family: inherit;
-    text-decoration: none;
-}
-
-#home-button:visited {
-    color: inherit;
-}
-
-#home-button:hover {
-    opacity: 0.8;
 }
 
 /* スパム対策 */
@@ -528,21 +479,6 @@ a:hover {
   position: absolute;
   left: -9999px;
 }
-
-@media (max-width: 767px) {
-    .policy-content {
-        padding: 40px 20px 80px;
-    }
-
-    .policy-title {
-        font-size: 28px;
-    }
-
-    .policy-heading {
-        font-size: 20px;
-    }
-}
-
 
 @media (max-width: 767px) {
     /* メニュー開いている間はスクロール禁止 */
@@ -561,19 +497,19 @@ a:hover {
     .header {
         margin: 20px auto;
         position: relative;
-        padding: 0 20px;     
+        padding: 0 20px;
     }
 
     .header-logo {
         width: 140px;
     }
 
-    #navigation {
+    .global-nav {
         display: none; /* 閉じている間は要素そのものを消し、クリック/フォーカスとも当たらないようにする */
         position: fixed;
     }
 
-    #navigation.is-opened {
+    .global-nav.is-opened {
         display: block;
         width: 100vw;
         height: 100vh;
@@ -582,7 +518,7 @@ a:hover {
         z-index: 20;
     }
 
-    #navigation ul {
+    .global-nav ul {
         flex-direction: column;
         align-items: center;
         gap: 50px;
@@ -596,11 +532,11 @@ a:hover {
         transition: 0.5s;
     }
 
-    #navigation.is-opened ul {
+    .global-nav.is-opened ul {
         transform: translateX(0);
     }
 
-    #hamburger-button {
+    .hamburger {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -613,22 +549,22 @@ a:hover {
         z-index: 30;
     }
 
-    #hamburger-button span {
+    .hamburger span {
         width: 30px;
         height: 2px;
         background-color: var(--ribbon-color);
         transition: 0.3s;
     }
 
-    #hamburger-button.is-opened span:nth-of-type(1){
+    .hamburger.is-opened span:nth-of-type(1){
         transform: translateY(12px) rotate(45deg);
     }
 
-    #hamburger-button.is-opened span:nth-of-type(2){
+    .hamburger.is-opened span:nth-of-type(2){
         opacity: 0;
     }
 
-    #hamburger-button.is-opened span:nth-of-type(3){
+    .hamburger.is-opened span:nth-of-type(3){
         transform: translateY(-12px) rotate(-45deg);
     }
 
@@ -649,13 +585,13 @@ a:hover {
         display: block;
         position: absolute;
         left: -20px;
-        top: 30px;    
+        top: 30px;
         width: 40px;
         height: 25px;
-        z-index: 5;      
+        z-index: 5;
     }
 
-    /* Main Visual */    
+    /* Main Visual */
     .main-message {
         width: 100%;
         padding-left: 60px;
@@ -679,16 +615,15 @@ a:hover {
         display: none;
     }
 
-    #thread-line-top {
+    .thread-line-top {
         height: 350px;
-        width: 1px;
     }
 
     /* SP側のリボンは、Section titleを親とする*/
     .ribbon-pc {
-        display: none;      
+        display: none;
     }
-    
+
     /* Message */
     .message-area {
         grid-template-columns: 1fr;
@@ -722,6 +657,15 @@ a:hover {
         width: 100%;
     }
 
+    .source {
+        font-size: 12px;
+        width: 60px;
+    }
+
+    .tool-tag {
+        font-size: 12px;
+    }
+
     /* About */
     .about-container {
         display: block;
@@ -739,16 +683,6 @@ a:hover {
         width: 100%;
     }
 
-    .about-text > h2 {
-        margin: 0;
-    }
-
-    .skill-title {
-        display: inline-block;
-        width: 120px;
-    }
-
-    
     /* Contact */
     /* 左右の余白は共通の.thread-contentのpaddingに任せる */
 
@@ -756,4 +690,16 @@ a:hover {
         width: 80%;
     }
 
+    /* プライバシーポリシー */
+    .policy-content {
+        padding: 40px 20px 80px;
+    }
+
+    .policy-title {
+        font-size: 28px;
+    }
+
+    .policy-heading {
+        font-size: 20px;
+    }
 }
