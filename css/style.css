@@ -396,19 +396,12 @@ a:hover,
     margin: 0 0 50px 0;
 }
 
-.privacy {
-    text-decoration: none;
-    color: var(--text-color);
-}
-
 .pagetop {
     display: flex;
     align-items: center;
     height: 80px;
     width: 110px;
     margin: 100px auto 50px auto;
-    text-decoration: none;
-    color: var(--text-color);
 }
 
 .arrow {
