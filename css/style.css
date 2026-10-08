@@ -4,6 +4,8 @@
   --button-color: #C45A55;
   --text-color: #3B352F;
   --text-color-tool:#7a4b34;
+  --font-body: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --font-display: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif; /* FV用 */
   --fontsize-button: 16px;
   --thread-space: 100px; /* 糸のレーンを左に100px確保している */
   --thread-left: 40px; /* 糸が引かれている左からの位置*/
@@ -17,15 +19,17 @@ html {
     scroll-behavior: smooth;
 }
 
-h1,h2,h3 {
+h1, h2, h3, h4 {
     font-weight: 500;
 }
 
 body {
     color: var(--text-color);
     margin:0 auto;
-    font-family: "Hiragino Mincho ProN", "Shippori Mincho Regular", serif;
-    font-weight: 400;
+    font-family: var(--font-body);
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
     background-color: var(--body-color);
 }
 
@@ -180,7 +184,8 @@ a:hover,
     z-index: 12;
     margin: 0;
     padding: 130px 0 0 0;
-    font-weight: 300;
+    font-family: var(--font-display);
+    font-weight: 400; /* Shippori Minchoは400が最細 */
 }
 
 .main-text > span {
@@ -192,7 +197,8 @@ a:hover,
     padding: 24px 0 0 5px;
     z-index: 11;
     font-size: 24px;
-    font-weight: 300;
+    font-family: var(--font-display);
+    font-weight: 400;
     line-height: 1.8;
 }
 
