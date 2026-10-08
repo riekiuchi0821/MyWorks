@@ -91,7 +91,7 @@ a:hover {
 /* 糸 */
 
 /* メインセクションの糸 */
-#thread-line-top {
+.thread-line-top {
     position: absolute;
     top: 80px;
     left: var(--thread-left);
@@ -105,7 +105,7 @@ a:hover {
     transition: transform 1.5s ease 0.5s;
 }
 
-#thread-line-top.scroll {
+.thread-line-top.scroll {
     transform: scaleY(1);
 }
 
@@ -127,12 +127,12 @@ a:hover {
 }
 
 /* 最後のセクションのみ糸を短く */
-#contact .thread-line {
+.thread-line--short {
     height: 100%;
 }
 
 /* ナビゲーション */
-#hamburger-button {
+.hamburger {
     display: none;
 }
 
@@ -153,25 +153,25 @@ a:hover {
     width: 100%;
 }
 
-#navigation ul {
+.global-nav ul {
     font-size: 20px;
     display: flex;
     padding-left: 0;
     column-gap: 60px;
 }
 
-#navigation li {
+.global-nav li {
     list-style: none;
 }
 
-#navigation a:hover {
+.global-nav a:hover {
     /* text-decoration: underline; */
     opacity: 50%;
 }
 
 
 /* Main Visual */
-#main-visual {
+.main-visual {
     position: relative;
     /* height: 80vh; */
     height: clamp(600px, 80vh, 750px);
@@ -341,17 +341,13 @@ a:hover {
     margin: 0;
 }
 
-#skill-grid {
+.skill-grid {
     display: grid;
     grid-template-columns: 120px 1fr;
     row-gap: 10px;
 }
 
 /* Contact */
-
-/* #contact-form {
-    display: none;
-} */
 
 .contact-table {
     width: 60%;
@@ -372,12 +368,12 @@ a:hover {
     padding: 10px 0;
 }
 
-#yourname, #email {
+.form-input {
     width: 100%;
     height: 48px;
 }
 
-#message {
+.form-textarea {
     width: 100%;
     height: 220px;
 }
@@ -495,13 +491,13 @@ a:hover {
 }
 
 /* Thank You */
-#thankyou {
+.thankyou {
     width: 50%;
     margin: 200px auto 0 auto;
     text-align: center;
 }
 
-#thankyou .contents {
+.thankyou .contents {
     margin: 10px 0 50px 0;
 }
 
@@ -510,21 +506,6 @@ a:hover {
   position: absolute;
   left: -9999px;
 }
-
-@media (max-width: 767px) {
-    .policy-content {
-        padding: 40px 20px 80px;
-    }
-
-    .policy-title {
-        font-size: 28px;
-    }
-
-    .policy-heading {
-        font-size: 20px;
-    }
-}
-
 
 @media (max-width: 767px) {
     /* メニュー開いている間はスクロール禁止 */
@@ -550,12 +531,12 @@ a:hover {
         width: 140px;
     }
 
-    #navigation {
+    .global-nav {
         display: none; /* 閉じている間は要素そのものを消し、クリック/フォーカスとも当たらないようにする */
         position: fixed;
     }
 
-    #navigation.is-opened {
+    .global-nav.is-opened {
         display: block;
         width: 100vw;
         height: 100vh;
@@ -564,7 +545,7 @@ a:hover {
         z-index: 20;
     }
 
-    #navigation ul {
+    .global-nav ul {
         flex-direction: column;
         align-items: center;
         gap: 50px;
@@ -578,11 +559,11 @@ a:hover {
         transition: 0.5s;
     }
 
-    #navigation.is-opened ul {
+    .global-nav.is-opened ul {
         transform: translateX(0);
     }
 
-    #hamburger-button {
+    .hamburger {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -595,22 +576,22 @@ a:hover {
         z-index: 30;
     }
 
-    #hamburger-button span {
+    .hamburger span {
         width: 30px;
         height: 2px;
         background-color: var(--ribbon-color);
         transition: 0.3s;
     }
 
-    #hamburger-button.is-opened span:nth-of-type(1){
+    .hamburger.is-opened span:nth-of-type(1){
         transform: translateY(12px) rotate(45deg);
     }
 
-    #hamburger-button.is-opened span:nth-of-type(2){
+    .hamburger.is-opened span:nth-of-type(2){
         opacity: 0;
     }
 
-    #hamburger-button.is-opened span:nth-of-type(3){
+    .hamburger.is-opened span:nth-of-type(3){
         transform: translateY(-12px) rotate(-45deg);
     }
 
@@ -661,7 +642,7 @@ a:hover {
         display: none;
     }
 
-    #thread-line-top {
+    .thread-line-top {
         height: 350px;
         width: 1px;
     }
@@ -747,4 +728,16 @@ a:hover {
         width: 80%;
     }
 
+    /* プライバシーポリシー */
+    .policy-content {
+        padding: 40px 20px 80px;
+    }
+
+    .policy-title {
+        font-size: 28px;
+    }
+
+    .policy-heading {
+        font-size: 20px;
+    }
 }

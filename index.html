@@ -28,14 +28,14 @@
       </div>
 
       <!-- ナビゲーション -->
-      <nav id="navigation">
+      <nav id="navigation" class="global-nav">
         <ul>
           <li><a href="index.html#works">Works</a></li>
           <li><a href="index.html#about">About</a></li>
           <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </nav>
-      <button id="hamburger-button" type="button">
+      <button id="hamburger-button" class="hamburger" type="button">
         <span></span>
         <span></span>
         <span></span>
@@ -47,7 +47,7 @@
       <!-- Main Visual -->
       <main>
         <article>
-          <section id="main-visual">
+          <section id="main-visual" class="main-visual">
             <picture>
               <!-- 500px以下：スマホ用 -->
               <source media="(max-width: 500px)" srcset="img/hero-sp.jpg" />
@@ -60,7 +60,7 @@
                 alt="自画像"
               />
             </picture>
-            <div id="thread-line-top"></div>
+            <div id="thread-line-top" class="thread-line-top"></div>
             <div class="main-message thread-content">
               <h1 class="main-text">
                 <span>想い</span>を整理し<br />伝わるWebサイトに
@@ -229,7 +229,7 @@
                     地元で、観光ガイドをしています。<br />
                   </p>
                   <h4>Skills</h4>
-                  <div id="skill-grid">
+                  <div class="skill-grid">
                     <div>Webデザイン</div>
                     <div>Photoshop / Figma</div>
 
@@ -242,7 +242,7 @@
           </section>
 
           <section id="contact" class="thread-sections">
-            <div class="thread-line"></div>
+            <div class="thread-line thread-line--short"></div>
             <div class="thread-content">
               <div class="section-title-wrapper">
                 <h2 class="section-title">Contact</h2>
@@ -274,7 +274,7 @@
                     <label for="yourname">お名前</label>
                   </div>
                   <div class="table-input">
-                    <input type="text" name="yourname" id="yourname" />
+                    <input type="text" name="yourname" id="yourname" class="form-input" />
                     <p class="error-message"></p>
                   </div>
                 </div>
@@ -283,7 +283,7 @@
                     <label for="email">メールアドレス</label>
                   </div>
                   <div class="table-input">
-                    <input type="email" name="email" id="email" />
+                    <input type="email" name="email" id="email" class="form-input" />
                     <p class="error-message"></p>
                   </div>
                 </div>
@@ -292,7 +292,7 @@
                     <label for="message">お問合せ内容</label>
                   </div>
                   <div class="table-input">
-                    <textarea name="message" id="message"></textarea>
+                    <textarea name="message" id="message" class="form-textarea"></textarea>
                     <p class="error-message"></p>
                   </div>
                 </div>
