@@ -5,7 +5,7 @@
   --text-color: #3B352F;
   --text-color-tool:#7a4b34;
   --fontsize-button: 16px;
-  --thread-space: 100px; /* 糸のレーンを左に100px確保している */  
+  --thread-space: 100px; /* 糸のレーンを左に100px確保している */
   --thread-left: 40px; /* 糸が引かれている左からの位置*/
 }
 
@@ -51,12 +51,12 @@ a:hover,
 .ribbon-pc {
     position: absolute;
     left: 0px;
-    top: -20px;    
+    top: -20px;
     width: 80px;
     height: 50px;
     z-index: 5;
     opacity: 0;
-    transition: opacity 1s ease;     
+    transition: opacity 1s ease;
 }
 
 .ribbon-pc.scroll {
@@ -167,7 +167,6 @@ a:hover,
 /* Main Visual */
 .main-visual {
     position: relative;
-    /* height: 80vh; */
     height: clamp(600px, 80vh, 750px);
 }
 
@@ -176,7 +175,7 @@ a:hover,
 }
 
 .main-text {
-    position: relative; 
+    position: relative;
     font-size: 48px;
     z-index: 12;
     margin: 0;
@@ -192,7 +191,7 @@ a:hover,
     position: relative;
     padding: 24px 0 0 5px;
     z-index: 11;
-    font-size: 24px;   
+    font-size: 24px;
     font-weight: 300;
     line-height: 1.8;
 }
@@ -244,7 +243,7 @@ a:hover,
 }
 
 .my-name-s {
-    font-size: 16px;   
+    font-size: 16px;
 }
 
 /* Works */
@@ -354,7 +353,7 @@ a:hover,
 }
 
 .table-title {
-    padding: 20px 0 10px 0;    
+    padding: 20px 0 10px 0;
 }
 
 .table-input {
@@ -463,11 +462,6 @@ a:hover,
     margin: 0 0 80px;
 }
 
-.policy-home-link {
-    display: inline-block;
-    color: inherit;
-}
-
 /* Thank You */
 .thankyou {
     width: 50%;
@@ -502,7 +496,7 @@ a:hover,
     .header {
         margin: 20px auto;
         position: relative;
-        padding: 0 20px;     
+        padding: 0 20px;
     }
 
     .header-logo {
@@ -590,13 +584,13 @@ a:hover,
         display: block;
         position: absolute;
         left: -20px;
-        top: 30px;    
+        top: 30px;
         width: 40px;
         height: 25px;
-        z-index: 5;      
+        z-index: 5;
     }
 
-    /* Main Visual */    
+    /* Main Visual */
     .main-message {
         width: 100%;
         padding-left: 60px;
@@ -622,14 +616,13 @@ a:hover,
 
     .thread-line-top {
         height: 350px;
-        width: 1px;
     }
 
     /* SP側のリボンは、Section titleを親とする*/
     .ribbon-pc {
-        display: none;      
+        display: none;
     }
-    
+
     /* Message */
     .message-area {
         grid-template-columns: 1fr;
@@ -689,16 +682,6 @@ a:hover,
         width: 100%;
     }
 
-    .about-text > h2 {
-        margin: 0;
-    }
-
-    .skill-title {
-        display: inline-block;
-        width: 120px;
-    }
-
-    
     /* Contact */
     /* 左右の余白は共通の.thread-contentのpaddingに任せる */
 
