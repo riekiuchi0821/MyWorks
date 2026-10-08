@@ -4,8 +4,8 @@
   --button-color: #C45A55;
   --text-color: #3B352F;
   --text-color-tool:#7a4b34;
-  --font-body: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
-  --font-display: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif; /* FV用 */
+  --font-body: "Noto Serif JP", "Yu Mincho", serif;
+  --font-display: "Shippori Mincho", "Yu Mincho", serif; /* FV用 */
   --fontsize-button: 16px;
   --thread-space: 100px; /* 糸のレーンを左に100px確保している */
   --thread-left: 40px; /* 糸が引かれている左からの位置*/
@@ -240,7 +240,6 @@ a:hover,
 
 .message-title {
     font-size: 28px;
-    font-weight: 400;
 }
 
 .my-name {
@@ -269,7 +268,6 @@ a:hover,
 
 .card-title {
     font-size: 20px;
-    font-weight: 400;
     margin-bottom: 8px;
 }
 
@@ -422,7 +420,6 @@ a:hover,
 
 .policy-title {
     font-size: 40px;
-    font-weight: 500;
     margin: 0 0 40px;
     padding-bottom: 16px;
     border-bottom: solid 3px var(--ribbon-color);
@@ -439,7 +436,6 @@ a:hover,
 
 .policy-heading {
     font-size: 22px;
-    font-weight: 500;
     margin: 0 0 16px;
     padding-bottom: 8px;
     border-bottom: solid 2px var(--ribbon-color);
@@ -447,7 +443,6 @@ a:hover,
 
 .policy-subheading {
     font-size: 18px;
-    font-weight: 500;
     margin: 24px 0 12px;
 }
 
