@@ -6,8 +6,8 @@
   --font-body: "Noto Serif JP", "Yu Mincho", serif;
   --font-display: "Shippori Mincho", "Yu Mincho", serif; /* FV用 */
   --fontsize-button: 16px;
-  --thread-space: 100px; /* 糸のレーンを左に100px確保している */
-  --thread-left: 40px; /* 糸が引かれている左からの位置*/
+  --thread-space: 100px;
+  --thread-left: 40px;
 }
 
 * {
@@ -46,7 +46,7 @@ a:hover,
     font-size: 48px;
     text-align: left;
     margin-top: 100px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     padding: 0 0 10px 20px;
     border-bottom: solid 3px var(--ribbon-color);
 }
@@ -219,7 +219,7 @@ a:hover,
     grid-template-areas:
         "photo contents"
         "photo name";
-    align-items: center;
+    align-items: start; /* 中央揃えだと文章量で写真の上端がずれるため上揃え */
     gap: 24px;
 }
 
@@ -239,6 +239,7 @@ a:hover,
 
 .message-title {
     font-size: 28px;
+    margin-top: 0; /* h3標準の上余白を消し、赤線下の余白をセクション間でそろえる */
 }
 
 .my-name {
@@ -325,7 +326,6 @@ a:hover,
 .about-container {
     display: flex;
     gap: 0 5%;
-    margin-top: 100px;
     padding: 0 20px;
 }
 
