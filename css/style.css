@@ -3,12 +3,11 @@
   --ribbon-color: #FD2621;
   --button-color: #C45A55;
   --text-color: #3B352F;
-  --text-color-tool:#7a4b34;
   --font-body: "Noto Serif JP", "Yu Mincho", serif;
   --font-display: "Shippori Mincho", "Yu Mincho", serif; /* FV用 */
   --fontsize-button: 16px;
-  --thread-space: 100px; /* 糸のレーンを左に100px確保している */
-  --thread-left: 40px; /* 糸が引かれている左からの位置*/
+  --thread-space: 100px;
+  --thread-left: 40px;
 }
 
 * {
@@ -47,7 +46,7 @@ a:hover,
     font-size: 48px;
     text-align: left;
     margin-top: 100px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     padding: 0 0 10px 20px;
     border-bottom: solid 3px var(--ribbon-color);
 }
@@ -220,7 +219,7 @@ a:hover,
     grid-template-areas:
         "photo contents"
         "photo name";
-    align-items: center;
+    align-items: start; /* 中央揃えだと文章量で写真の上端がずれるため上揃え */
     gap: 24px;
 }
 
@@ -240,6 +239,7 @@ a:hover,
 
 .message-title {
     font-size: 28px;
+    margin-top: 0; /* h3標準の上余白を消し、赤線下の余白をセクション間でそろえる */
 }
 
 .my-name {
@@ -266,9 +266,14 @@ a:hover,
     margin-bottom: 40px;
 }
 
+.card-text {
+    width: fit-content;
+    margin-inline: auto;
+    margin-top: 8px;
+}
+
 .card-title {
-    font-size: 20px;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 }
 
 .cards-lp{
@@ -284,17 +289,19 @@ a:hover,
 }
 
 .cards-banner > img {
+    display: block;
+    margin-inline: auto;
     width: 90%;
+}
+
+.card-tool {
+    margin-bottom: 32px;
+    font-size: 14px;
 }
 
 .source {
     display: inline-block;
     width: 80px;
-}
-
-.card-tool {
-    margin-bottom: 32px;
-    color: var(--text-color-tool);
 }
 
 .card-visit {
@@ -304,11 +311,14 @@ a:hover,
 
 .card-visit-button {
     font-size: var(--fontsize-button);
-    padding: 8px 32px;
-}
+    padding: 8px 24px;
+    border: 1px solid var(--button-color);
+    border-radius: 30px;
+    /*
+        border-top: 1px solid var(--button-color);
+    border-bottom: 1px solid var(--button-color);
+    */
 
-.tool-tag {
-    padding: 2px 16px;
 }
 
 /* About */
@@ -316,7 +326,6 @@ a:hover,
 .about-container {
     display: flex;
     gap: 0 5%;
-    margin-top: 100px;
     padding: 0 20px;
 }
 
@@ -335,6 +344,10 @@ a:hover,
 
 .about-text > h2 {
     margin: 0;
+}
+
+.about-text-content {
+    margin-bottom: 32px;
 }
 
 .skill-grid {
@@ -646,6 +659,7 @@ a:hover,
     .cards-lp,
     .cards-banner{
         width: 80%;
+        min-width: 300px;
     }
 
     .cards-lp a {
