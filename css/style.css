@@ -346,6 +346,10 @@ a:hover,
     margin: 0;
 }
 
+.about-text-content {
+    margin-bottom: 32px;
+}
+
 .skill-grid {
     display: grid;
     grid-template-columns: 120px 1fr;
